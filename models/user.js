@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
     debug    = require('debug')('app:models');
 
-var userSchema = new mongooose.Schema({
+var userSchema = new mongoose.Schema({
   prof_name: String,
   prof_email: String,
   prof_picture: String

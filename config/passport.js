@@ -1,4 +1,4 @@
-var GoogleStrategy = require('passport-google-oauth').Oauth2Strategy;
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var User = require('../models/user');
 
 module.exports = function(passport) {
@@ -15,11 +15,16 @@ module.exports = function(passport) {
           return done(null, user);
         } else {
           var newUser = new User({
-
+            prof_name: profile.displayName,
+            prof_email: profile.emails[0].value,
+            prof_picture: img.url
+          });
+          newUser.save(function(err){
+            if(err) return done(err);
+            return done(null, newUser);
           });
         }
       });
     }
   ));
-
 }
