@@ -3,9 +3,13 @@ var path         = require('path');
 var favicon      = require('serve-favicon');
 var logger       = require('morgan');
 var bodyParser   = require('body-parser');
+var session = require('express-session');
 var debug        = require('debug')('app:http');
 var cookieParser = require('cookie-parser');
+var passport = require('passport');
 
+
+require('dotenv').load();
 // Load local libraries.
 var env      = require('./config/environment'),
     mongoose = require('./config/database'),
@@ -27,11 +31,20 @@ app.locals.title = app.get('title');
 // Logging layer.
 app.use(logger('dev'));
 
+
 // Helper layer (parses the requests, and adds further data).
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cookieParser('notsosecretnowareyou'));
+app.use(session({
+  secret: 'wdirocks',
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Routing layers: favicon, static assets, dynamic routes, or 404…
 
@@ -39,6 +52,7 @@ app.use(cookieParser('notsosecretnowareyou'));
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+require('./config/passport')(passport);
 // Useful for debugging the state of requests.
 app.use(debugReq);
 
