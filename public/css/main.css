@@ -1,13 +1,69 @@
+@import url("http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather:400,300,700,900");
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
 *,
 html,
 body {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 body {
-  font-size: 14px;
-  padding: 50px;
+/*  font-size: 14px;
+  padding: 50px;*/
+
 }
 
-a { color: #00B7FF; }
+#header {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 500px;
+  background: url('../../images/misc/joinMainImage.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0 auto;
+  display: block;
+}
+
+nav {
+  background-color: grey;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+#bar {
+  background: rgba(0,0,0,.6);
+  height: 70px;
+  position: relative;
+  top: 430px;
+}
+
+@media (min-width: 47em) {
+  .layout .primary {
+    width: 49.15245%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+
+  .layout .secondary {
+    width: 45.15254%;
+    float: right;
+    margin-right: 0;
+  }
+  .layout .secondary h1 {
+    font-size: 1.8rem;
+    color: #bd3613;
+    padding-bottom: 5px;
+  }
+
+a { color: white; }
