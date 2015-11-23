@@ -48,6 +48,21 @@ ol, ul {
   top: 430px;
 }
 
+.btn-primary {
+  background-color: white;
+  color: grey;
+  border-color: grey;
+}
+
+#place,
+#btnSearch,
+.dropdown {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 17.5px;
+}
+
+
 @media (min-width: 47em) {
   .layout .primary {
     width: 49.15245%;
