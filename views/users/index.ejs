@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%- include('../partials/head') %>
+  <%- include('../partials/head.ejs') %>
 </head>
 <body>
-  <%- include('../partials/header', {subHeading: 'User List'}) %>
+  <%- include('../partials/header.ejs', {subHeading: 'User List'}) %>
+
+  <section class="layout">
+    <div class="primary">
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ipsum voluptas animi minus saepe, ea ipsa, iure repudiandae, laborum fuga quaerat! Sunt eum at nostrum corrupti impedit maxime ex esse.</div>
+    </div><!-- primary -->
+    <aside class="secondary">
+        <div>Mollitia voluptatum quas, cumque libero consectetur voluptas reiciendis eos quis omnis eum nobis fugiat voluptate porro harum quos in iusto quaerat dolore, atque. Iste voluptate distinctio nostrum accusamus porro culpa!</div>
+    </aside><!-- secondary -->
+  </section><!-- layout -->
 
   <main>
     <ul>
@@ -14,7 +23,7 @@
     </ul>
     <p><a href="/">Back to home.</a></p>
   </main>
-
-  <%- include('../partials/scripts') %>
+  <%- include('../partials/footer.ejs') %>
+  <%- include('../partials/scripts.ejs') %>
 </body>
 </html>
