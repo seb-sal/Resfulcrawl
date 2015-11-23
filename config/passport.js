@@ -16,8 +16,8 @@ module.exports = function(passport) {
         } else {
           var newUser = new User({
             prof_name: profile.displayName,
-            prof_email: profile.emails[0].value,
-            prof_picture: img.url
+            prof_email: profile.emails[0].value
+            // prof_picture: img.url
           });
           newUser.save(function(err){
             if(err) return done(err);
@@ -27,4 +27,14 @@ module.exports = function(passport) {
       });
     }
   ));
+
+    passport.serializeUser(function(user, done){
+      done(null, user.id);
+    });
+
+    passport.deserializeUser(function(id, done) {
+      User.findById(id, function(err, user) {
+        done(err, user);
+      });
+    });
 }

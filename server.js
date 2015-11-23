@@ -54,6 +54,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 require('./config/passport')(passport);
 // Useful for debugging the state of requests.
+
+require('./config/routes')(app, passport);
+
 app.use(debugReq);
 
 // Defines all of our "dynamic" routes.
