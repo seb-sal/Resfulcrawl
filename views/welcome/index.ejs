@@ -6,7 +6,39 @@
 <body>
 
   <%- include('../partials/header.ejs', {subHeading: 'Welcome'}) %>
+<div id="header">
 
+<div id="bar">
+  <div class="col-xs-12 col-md text-center">
+  <form method="GET" action="/venues">
+    <input class="form-control" Style="width: 250px" id="place" type="text" name="place[name]" placeholder="ex: Los Angeles, CA"/>
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Miles
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#">5 Miles</a></li>
+        <li><a href="#">10 Miles</a></li>
+        <li><a href="#">15 Miles</a></li>
+        <li><a href="#">20 Miles</a></li>
+        <li><a href="#">25  Miles</a></li>
+      </ul>
+    </div>
+    <button id="btnSearch" class="btn btn-primary btn-md center-block" Style="width: 100px" OnClick="btnSearch_Click">Search</button>
+<!--     <input class="search-btn" type="submit" value="Search" /> -->
+  </form>
+  </div>
+</div>
+
+<div class="container">
+  <div class="hero">
+    <section class="layout">
+      <div class="branding">
+      </div><!-- branding -->
+    </section><!-- layout -->
+  </div><!-- hero -->
+</div>
+
+</div>
 
   <main>
     <ul>
