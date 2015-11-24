@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <%- include('../partials/head.ejs') %>
+  <$- include('../partials/head.ejs') $>
 <body>
-  <%- include('../partials/header.ejs', {subHeading: 'Welcome'}) %>
+  <$- include('../partials/header.ejs', {subHeading: 'Welcome'}) $>
 
 <br>
 <br>
@@ -27,19 +27,19 @@
 
 
 
-  <% venues.forEach(function(venue) { %>
+  <$ venues.forEach(function(venue) { $>
 
-      <img src="<%= venue.image_url %>" alt="">
-      <h4><a href="<%= venue.url %>"><%= venue.name %></a></h4>
-      <img src="<%= venue.rating_img_url %>" alt="Link"> <%= venue.review_count %> reviews
-      <p><%= venue.categories %></p>
-      <p><%- venue.location.display_address.join('<br>') %></p>
-      <p><%- venue.phone %></p>
-      <p><img src="<%- venue.snippet_image_url %>" alt=""><%- venue.snippet_text %></p>
+      <img src="<$= venue.image_url $>" alt="">
+      <h4><a href="<$= venue.url $>"><$= venue.name $></a></h4>
+      <img src="<$= venue.rating_img_url $>" alt="Link"> <$= venue.review_count $> reviews
+      <p><$= venue.categories $></p>
+      <p><$- venue.location.display_address.join('<br>') $></p>
+      <p><$- venue.phone $></p>
+      <p><img src="<$- venue.snippet_image_url $>" alt=""><$- venue.snippet_text $></p>
 
-  <% }); %>
+  <$ }); $>
 
-  <%- include('../partials/footer.ejs') %>
-  <%- include('../partials/scripts.ejs') %>
+  <$- include('../partials/footer.ejs') $>
+  <$- include('../partials/scripts.ejs') $>
 </body>
 </html>
