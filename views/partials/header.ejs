@@ -1,5 +1,5 @@
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <div id="header">
 
@@ -13,6 +13,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if (user) { %>
         <li><a href="/logout"><i class="fa fa-sign-in"></i>&nbsp&nbspSIGN OUT</a></li>
+        <li>Welcome, <%= user.prof_name %></a></li>
         <% } else { %>
         <li><a href="/auth/google"><i class="fa fa-sign-in"></i>&nbsp&nbspSIGN IN</a></li>
         <% } %>
@@ -22,7 +23,7 @@
 <div id="bar">
   <div class="col-xs-12 col-md text-center">
   <form method="GET" action="/venues">
-    <input class="form-control" Style="width: 250px" id="place" type="text" name="place[name]" placeholder="ex: Cleveland, OH"/>
+    <input class="form-control" Style="width: 250px" id="place" type="text" name="place[name]" placeholder="ex: Los Angeles, CA"/>
     <div class="dropdown">
       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Miles
       <span class="caret"></span></button>
