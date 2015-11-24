@@ -3,7 +3,6 @@ var express = require('express'),
 
 // Require controllers.
 var welcomeController = require('../controllers/welcome');
-var usersController   = require('../controllers/users');
 var crawlsController  = require('../controllers/crawls');
 var yelpController    = require('../controllers/yelp');
 
