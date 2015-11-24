@@ -28,6 +28,7 @@ app.set('view engine', 'ejs');
 // Create local variables for use thoughout the application.
 app.locals.title = app.get('title');
 
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // Logging layer.
 app.use(logger('dev'));
 
