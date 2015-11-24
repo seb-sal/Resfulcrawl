@@ -13,7 +13,7 @@ if (!env.MONGOLAB_URI) {
     process.exit(0);
   });
 }
-
+console.log(dbUri)
 mongoose.connect(dbUri);
 
 module.exports = mongoose;

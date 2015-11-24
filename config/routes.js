@@ -4,19 +4,18 @@ var express = require('express'),
 // Require controllers.
 var welcomeController = require('../controllers/welcome');
 var usersController   = require('../controllers/users');
+var crawlsController = require('../controllers/crawls');
 
-// root path:
-
-
-// users resource paths:
 
 module.exports = function(app, passport) {
   router.get('/users/:id', usersController.show);
   router.get('/users',     usersController.index);
 
-  app.use('/', router);
+  router.get('/crawls', crawlsController.index);
+  router.get('/crawls/:id', crawlsController.show);
 
   app.get('/', welcomeController.index);
+
 
   app.get('/auth/google', passport.authenticate(
     'google',
@@ -36,4 +35,7 @@ module.exports = function(app, passport) {
     res.redirect('/');
   });
 
+  app.use('/api', router);
+
 };
+

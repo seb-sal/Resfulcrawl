@@ -16,7 +16,7 @@ var users = [
   }
 ];
 
-// remove any blubs in the db
+//remove any crawls in the db
 Crawl.remove({}, function(err) {
   if (err) console.log(err);
 
@@ -27,18 +27,18 @@ Crawl.remove({}, function(err) {
     // create the default users, and then resets the contents of
     // users for use in the callback
     User.create(users, function(err, users) {
-
+      if (err) console.log(err);
       var crawls = [
         {
           title:     "Joeys crawl",
           date_of_crawl: new Date(),
           description:  "Eat BBQ till we drop!!!",
-          members: [user[0]._id, user[1]._id],
-          user_id: user[0]._id,
+          members: [users[0]._id, users[1]._id],
+          user_id: users[0]._id,
           locations: [
             {
-              start: 18:00,
-              end: 19:00,
+              start: 1800,
+              end: 1900,
               name: "Gen Korean BBQ House",
               url: "http://www.yelp.com/biz/gen-korean-bbq-house-cerritos",
               address: [
@@ -79,7 +79,6 @@ Crawl.remove({}, function(err) {
           );
           mongoose.disconnect();
         }
-
       });
     });
   });
