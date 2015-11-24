@@ -16,11 +16,12 @@ module.exports = function(passport) {
         } else {
           var newUser = new User({
             prof_name: profile.displayName,
-            prof_email: profile.emails[0].value
-            // prof_picture: img.url
+            prof_email: profile.emails[0].value,
+            prof_picture: profile.photos[0].value
           });
           newUser.save(function(err){
             if(err) return done(err);
+            console.log(newUser);
             return done(null, newUser);
           });
         }
