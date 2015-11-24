@@ -9,10 +9,12 @@ var usersController   = require('../controllers/users');
 
 
 // users resource paths:
-app.get('/users',     usersController.index);
-app.get('/users/:id', usersController.show);
 
 module.exports = function(app, passport) {
+  router.get('/users/:id', usersController.show);
+  router.get('/users',     usersController.index);
+
+  app.use('/', router);
 
   app.get('/', welcomeController.index);
 
