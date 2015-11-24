@@ -1,5 +1,4 @@
 var express = require('express');
-var router = express.Router();
 var oauthSignature = require('oauth-signature');
 var n = require('nonce')();
 var qs = require('querystring');
@@ -19,14 +18,8 @@ var url = 'http://api.yelp.com/v2/search/?';
 var consumerSecret = process.env.YELP_CONSUMER_SECRET;
 var tokenSecret = process.env.YELP_TOKEN_SECRET;
 
-
-
-
-
-
-
 /* GET /venues?place[name]&place[query] (INDEX) */
-router.get('/', function(req, res, next) {
+var index = function(req, res, next) {
 
   /* We set the require parameters here */
   var required_parameters = {
@@ -78,7 +71,9 @@ router.get('/', function(req, res, next) {
       }
     );
   });
-});
+};
 
 
-module.exports = router;
+module.exports = {
+  index: index
+};
