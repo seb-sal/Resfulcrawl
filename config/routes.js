@@ -5,16 +5,13 @@ var express = require('express'),
 var welcomeController = require('../controllers/welcome');
 var usersController   = require('../controllers/users');
 
-// root path:
-
-
-// users resource paths:
-router.get('/users',     usersController.index);
-router.get('/users/:id', usersController.show);
 
 module.exports = function(app, passport) {
 
+  app.get('/users/:id', usersController.show);
+  app.get('/users', usersController.index);
   app.get('/', welcomeController.index);
+
 
   app.get('/auth/google', passport.authenticate(
     'google',
