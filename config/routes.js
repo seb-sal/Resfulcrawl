@@ -6,6 +6,13 @@ var welcomeController = require('../controllers/welcome');
 var usersController   = require('../controllers/users');
 var crawlsController = require('../controllers/crawls');
 
+// yelp api implmentation
+var yelpController = require('../controllers/yelp');
+
+// root path:
+
+
+// users resource paths:
 
 module.exports = function(app, passport) {
   router.get('/users/:id', usersController.show);
@@ -13,6 +20,9 @@ module.exports = function(app, passport) {
 
   router.get('/crawls', crawlsController.index);
   router.get('/crawls/:id', crawlsController.show);
+  // yelp api implmentation
+  router.use('/venues', yelpController);
+
 
   app.get('/', welcomeController.index);
 
