@@ -14,7 +14,7 @@ module.exports = function(app, passport) {
 
   app.get('/', welcomeController.index);
 
-  app.get('/api/crawls', crawlsController.index);
+  router.get('/crawls', crawlsController.index);
 
   app.get('/auth/google', passport.authenticate(
     'google',
