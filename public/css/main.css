@@ -80,6 +80,7 @@ ol, ul {
     padding-bottom: 5px;
   }
 
+<<<<<<< HEAD
 .icon {
   border-radius: 5px;
   width: 150px;
@@ -87,3 +88,6 @@ ol, ul {
 }
 
 a { color: white; }
+=======
+/* a { color: white; } */
+>>>>>>> 63221f8566935bba0c523bf448d79ccdfc8fb149

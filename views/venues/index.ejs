@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <$- include('../partials/head.ejs') $>
+<body>
+  <$- include('../partials/header.ejs', {subHeading: 'Welcome'}) $>
+
+<br>
+<br>
+<div class="col-xs-12 col-md text-center">
+<form method="GET" action="/venues">
+  <input class="form-control" Style="width: 250px" id="place" type="text" name="name" placeholder="ex: Los Angeles, CA"/>
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Miles
+    <span class="caret"></span></button>
+    <select name="radius" class="dropdown-menu">
+      <option value="8046">5 Miles</option>
+      <option value="16093">10 Miles</option>
+      <option value="24140">15 Miles</option>
+      <option value="32186">20 Miles</option>
+      <option value="40000">25 Miles</option>
+    </select>
+  </div>
+  <button id="btnSearch" class="btn btn-primary btn-md center-block" Style="width: 100px" OnClick="btnSearch_Click">Search</button>
+<!--     <input class="search-btn" type="submit" value="Search" /> -->
+</form>
+</div>
+
+
+
+  <$ venues.forEach(function(venue) { $>
+
+      <img src="<$= venue.image_url $>" alt="">
+      <h4><a href="<$= venue.url $>"><$= venue.name $></a></h4>
+      <img src="<$= venue.rating_img_url $>" alt="Link"> <$= venue.review_count $> reviews
+      <p><$= venue.categories $></p>
+      <p><$- venue.location.display_address.join('<br>') $></p>
+      <p><$- venue.phone $></p>
+      <p><img src="<$- venue.snippet_image_url $>" alt=""><$- venue.snippet_text $></p>
+
+  <$ }); $>
+
+  <$- include('../partials/footer.ejs') $>
+  <$- include('../partials/scripts.ejs') $>
+</body>
+</html>

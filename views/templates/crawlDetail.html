@@ -1,0 +1,8 @@
+<script type="text/template" id="crawlDetailTemplate">
+  <h1>Crawl</h1>
+  <p><%= crawl.title %></p>
+  <% crawl.locations.forEach(function(loc) { %>
+    <img src="<%= loc.image_url %>">
+  <% }); %>
+  <p><%= crawl.title %></p>
+</script>

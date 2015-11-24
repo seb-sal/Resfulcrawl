@@ -1,7 +1,7 @@
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<div id="header">
+
 
   <nav class="navbar navbar-fixed-top">
     <div class="container content">
@@ -11,15 +11,16 @@
         <li><a href="#"><i class="fa fa-child"></i></i>&nbsp&nbspJOIN</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <% if (user) { %>
+        <$ if (user) { $>
         <li><a href="/logout"><i class="fa fa-sign-in"></i>&nbsp&nbspSIGN OUT</a></li>
-        <li>Welcome, <%= user.prof_name %></a></li>
-        <% } else { %>
+        <li>Welcome, <$= user.prof_name $></a></li>
+        <$ } else { $>
         <li><a href="/auth/google"><i class="fa fa-sign-in"></i>&nbsp&nbspSIGN IN</a></li>
-        <% } %>
+        <$ } $>
       </ul>
     </div>
   </nav>
+<<<<<<< HEAD
 <div id="bar">
   <div class="col-xs-12 col-md text-center">
   <form method="GET" action="/venues">
@@ -40,16 +41,13 @@
   </form>
   </div>
 </div>
+=======
+>>>>>>> 63221f8566935bba0c523bf448d79ccdfc8fb149
 
 
-<div class="container">
-  <div class="hero">
-    <section class="layout">
-      <div class="branding">
-      </div><!-- branding -->
-    </section><!-- layout -->
-  </div><!-- hero -->
-</div>
+
+
+
 
 </div>
 

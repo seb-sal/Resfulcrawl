@@ -25,6 +25,7 @@ app.set('safe-title', env.SAFE_TITLE);
 // EJS view engine config
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+require('ejs').delimiter = '$';
 
 // Create local variables for use thoughout the application.
 app.locals.title = app.get('title');
@@ -64,7 +65,7 @@ app.use(debugReq);
 app.locals.appdata = require('./data.json');
 
 // Defines all of our "dynamic" routes.
-app.use('/', routes);
+
 
 // Catches all 404 routes.
 app.use(function(req, res, next) {
