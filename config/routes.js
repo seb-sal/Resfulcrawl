@@ -9,8 +9,8 @@ var usersController   = require('../controllers/users');
 
 
 // users resource paths:
-router.get('/users',     usersController.index);
-router.get('/users/:id', usersController.show);
+app.get('/users',     usersController.index);
+app.get('/users/:id', usersController.show);
 
 module.exports = function(app, passport) {
 
