@@ -116,14 +116,14 @@ Crawl.remove({}, function(err) {
 
       // create their default blubs, and then resets the contents of
       // blubs for use in the callback
-      Blub.create(blubs, function(err, blubs) {
+      Crawl.create(crawls, function(err, crawls) {
 
         if (err) {
           console.log(err);
         } else {
           console.log(
             "Database seeded with " + users.length  + " users, and " +
-            blubs.length + " blubs."
+            crawls.length + " crawls."
           );
           mongoose.disconnect();
         }
