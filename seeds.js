@@ -1,53 +1,5 @@
 var mongoose = require('./config/database');
 
-var User = require('./models/user');
-var Crawl = require('./models/crawl');
-
-
-var users = [
-  { // 0
-    prof_name: "Joey Lin",
-    prof_email:   "joey1@gmail.com",
-    prof_picture: "http://i.imgur.com/HHDHoBn.png"
-  },
-  { // 1
-    prof_name: "Ferdie Quizon",
-    prof_email:   "ferdie1@gmail.com",
-    prof_picture: "http://i.imgur.com/HHDHoBn.png"
-  }
-];
-
-
-var crawls = [
-  { // 0
-    title: "Joey's crawl",
-    date_of_crawl:   new Date();,
-    prof_picture: "http://i.imgur.com/HHDHoBn.png"
-  },
-  { // 1
-    prof_name: "Ferdie Quizon",
-    prof_email:   "ferdie1@gmail.com",
-    prof_picture: "http://i.imgur.com/HHDHoBn.png"
-  }
-];
-
-User.remove({}, function(err) {
-  if (err) console.log(err);
-  User.create(users, function(err, users) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("Database seeded with " + users.length  + " users.");
-      mongoose.disconnect();
-    }
-  });
-});
-
-
-
-
-var mongoose = require('./config/database');
-
 var Crawl = require('./models/crawl');
 var User = require('./models/user');
 
