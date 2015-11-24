@@ -6,10 +6,32 @@ var welcomeController = require('../controllers/welcome');
 var usersController   = require('../controllers/users');
 
 // root path:
-router.get('/', welcomeController.index);
+
 
 // users resource paths:
 router.get('/users',     usersController.index);
 router.get('/users/:id', usersController.show);
 
-module.exports = router;
+module.exports = function(app, passport) {
+
+  app.get('/', welcomeController.index);
+
+  app.get('/auth/google', passport.authenticate(
+    'google',
+    {scope: ['profile', 'email'] }
+    ));
+
+  app.get('/oauth2callback', passport.authenticate(
+    'google',
+    {
+    successRedirect : '/',
+    failureRedirect : '/'
+    }
+    ));
+
+  app.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
+  });
+
+};
