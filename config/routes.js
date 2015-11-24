@@ -12,6 +12,7 @@ module.exports = function(app, passport) {
   router.get('/users',     usersController.index);
 
   router.get('/crawls', crawlsController.index);
+  router.get('/crawls/:id', crawlsController.show);
 
   app.get('/', welcomeController.index);
 

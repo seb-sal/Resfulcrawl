@@ -11,12 +11,12 @@
         <li><a href="#"><i class="fa fa-child"></i></i>&nbsp&nbspJOIN</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <% if (user) { %>
+        <$ if (user) { $>
         <li><a href="/logout"><i class="fa fa-sign-in"></i>&nbsp&nbspSIGN OUT</a></li>
-        <li>Welcome, <%= user.prof_name %></a></li>
-        <% } else { %>
+        <li>Welcome, <$= user.prof_name $></a></li>
+        <$ } else { $>
         <li><a href="/auth/google"><i class="fa fa-sign-in"></i>&nbsp&nbspSIGN IN</a></li>
-        <% } %>
+        <$ } $>
       </ul>
     </div>
   </nav>

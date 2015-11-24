@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%- include('../partials/head.ejs') %>
+  <$- include('../partials/head.ejs') $>
 </head>
 <body>
 
-  <%- include('../partials/header.ejs', {subHeading: 'Welcome'}) %>
 
 
   <main>
-    <ul>
-      <li><a href="/users">Visit the user list.</a></li>
-    </ul>
+    <section id="main-content">
+    <$- include('../partials/header.ejs', {subHeading: 'Welcome'}) $>
+      <ul>
+        <li><a href="/users">Visit the user list.</a></li>
+      </ul>
+
+      <$ crawls.forEach(function(crawl) { $>
+        <div class="crawl" data-crawl-id="<$= crawl.id $>">
+          <p><$= crawl.title $></p>
+          <p><$= crawl $></p>
+        </div>
+      <$ }); $>
+    </section>
+
+    <section id="crawl-detail"></section>
+
   </main>
-  <%- include('../partials/footer.ejs') %>
-  <%- include('../partials/scripts.ejs') %>
+
+  <$- include('../partials/footer.ejs') $>
+  <$- include('../partials/scripts.ejs') $>
+  <$- include('../templates/crawlDetail.html') $>
 
 </body>
 </html>
