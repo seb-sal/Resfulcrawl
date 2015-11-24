@@ -61,7 +61,7 @@ require('./config/routes')(app, passport);
 app.use(debugReq);
 
 // Defines all of our "dynamic" routes.
-app.use('/', routes);
+
 
 // Catches all 404 routes.
 app.use(function(req, res, next) {
