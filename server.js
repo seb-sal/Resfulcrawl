@@ -60,6 +60,9 @@ require('./config/routes')(app, passport);
 
 app.use(debugReq);
 
+// imports all the content of the data.json file as an object
+app.locals.appdata = require('./data.json');
+
 // Defines all of our "dynamic" routes.
 app.use('/', routes);
 

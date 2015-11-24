@@ -62,7 +62,6 @@ ol, ul {
   margin-top: 17.5px;
 }
 
-
 @media (min-width: 47em) {
   .layout .primary {
     width: 49.15245%;
@@ -80,5 +79,11 @@ ol, ul {
     color: #bd3613;
     padding-bottom: 5px;
   }
+
+.icon {
+  border-radius: 5px;
+  width: 150px;
+  height: 150px;
+}
 
 a { color: white; }
