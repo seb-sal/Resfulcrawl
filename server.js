@@ -59,6 +59,9 @@ require('./config/passport')(passport);
 // Useful for debugging the state of requests.
 app.use(debugReq);
 
+// imports all the content of the data.json file as an object
+app.locals.appdata = require('./data.json');
+
 // Defines all of our "dynamic" routes.
 require('./config/routes')(app, passport);
 

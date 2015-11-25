@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Bree+Serif|Merriweather:400,300,700,900");
+@import url(https://fonts.googleapis.com/css?family=Maven+Pro);
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 
@@ -8,7 +8,8 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Maven Pro', sans-serif;
+  letter-spacing: .25px;
 }
 
 body {
@@ -21,7 +22,7 @@ body {
   position: relative;
   display: block;
   width: 100%;
-  height: 500px;
+  height: 545px;
   background: url('../../images/misc/joinMainImage.jpg');
   background-position: center center;
   background-repeat: no-repeat;
@@ -37,7 +38,21 @@ nav {
   background-color: grey;
 }
 
+.restfulcrawllogo{
+  margin-top: -5px;
+  height: 33.5px;
+  padding-left: 65px;
+}
 
+.nav-bar-welcome {
+  margin-top: 19px;
+  font-size: 10px;
+  color: white;
+  margin-left: 20px;
+  margin-right: 7.5px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
 
 ol, ul {
   list-style: none;
@@ -45,9 +60,9 @@ ol, ul {
 
 #bar {
   background: rgba(0,0,0,.6);
-  height: 70px;
+  height: 65px;
   position: relative;
-  top: 430px;
+  top: 480px;
 }
 
 .btn-primary {
@@ -61,9 +76,8 @@ ol, ul {
 .dropdown {
   display: inline-block;
   vertical-align: top;
-  margin-top: 17.5px;
+  margin-top: 15px;
 }
-
 
 @media (min-width: 47em) {
   .layout .primary {
@@ -83,7 +97,13 @@ ol, ul {
     padding-bottom: 5px;
   }
 
-/* a { color: white; } */
+.icon {
+  border-radius: 5px;
+  width: 150px;
+  height: 150px;
+}
+
+a { color: white; }
 
 .navbar-nav > li > a:link,
 .navbar-nav > li > a:visited,
@@ -93,7 +113,10 @@ ol, ul {
 }
 
 .navbar-nav > li > a:hover {
-  color: blue;
+  color: #ED6743;
+  height: 52.5px;
+  border-radius: 1.5px;
+  background-color: rgba(255, 255, 255, .6);
 }
 
 /* INDEX PAGE */
@@ -103,6 +126,7 @@ ol, ul {
 }
 
 #current-crawls h3 {
+  margin-top: 25px;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.75px;
@@ -114,7 +138,9 @@ ol, ul {
   font-weight: bold;
   position: relative;
   margin-right: 10px;
+  margin-top: 30px;
   cursor: pointer;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 .crawl-instance:hover img {
@@ -132,16 +158,19 @@ ol, ul {
   left: 15px;
 }
 
-
 .crawl-show {
   margin-top: 300px;
 }
 
 #indexRow {
-  margin: 10px;
+  margin-left: 65px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   padding: 10px;
-  border: 2px solid grey;
+  border: 1px solid grey;
   border-radius: 5px;
+  width: 54.5%;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 #buttonAddVenue {
@@ -149,12 +178,92 @@ ol, ul {
   color: white;
   border-color: grey;
   border-radius: 5px;
-  margin-left: 650px
+  margin-left: 350px;
+}
+
+.venue-search-bar {
+  margin-top: 25px;
 }
 
 #sidebar {
-   position: fixed;
-   right: 30px;
-   top: 150px;
-   border: 1px solid black;
+  width: 29.5%;
+  float: right;
+  margin-top: 25px;
+  margin-right: 65px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px #888888;
 }
+
+.venue-name {
+  color: grey;
+  font-size: 25px;
+}
+
+.snippet-text {
+  margin-left: 25px;
+}
+
+.venue-snippet-text {
+  margin-top: 17.5px;
+}
+
+.venue-thumb {
+  margin-top: 10px;
+}
+
+.venue-thumb, .venue-snippet-image {
+  border-radius: 5px;
+  box-shadow: 5px 5px 2.5px #888888;
+}
+
+.venue-phone {
+  margin-bottom: 15px;
+}
+
+.index-title {
+  margin-top: 25px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.crawl-show {
+  width: 100%;
+}
+
+.crawl-show-title {
+  font-size: 50px;
+  margin-left: 75px;
+  margin-top: -175px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.crawl-show-thumb {
+  margin-left: 75px;
+  margin-top: 25px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 2.5px #888888;
+}
+
+.crawl-show-restaurant {
+  margin-top: -47.5px;
+  margin-left: 200px;
+  color: rgba(0, 0, 0, .5);
+}
+
+.crawl-show-thumb:hover {
+  opacity: 0.75;
+}
+
+.crawl-show-description {
+  margin-top: -77.5px;
+  margin-left: 650px;
+  font-size: 25px;
+}
+
+
+
+
+
+
