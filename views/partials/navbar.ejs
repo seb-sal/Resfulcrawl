@@ -1,16 +1,16 @@
 <nav class="navbar navbar-fixed-top">
   <div class="container content">
     <ul class="nav navbar-nav navbar-left">
+      <div class="navbar-header navbar-center">
+          <a href="/" class="navbar-brand">
+            <img src="/images/misc/restfulcrawllogo.svg" class="restfulcrawllogo Brand">
+          </a>
+      </div>
       <li><a href="#"><i class="fa fa-search"></i>&nbsp&nbspFIND</a></li>
       <$ if (user) { $>
-        <li><a href="/venues"><i class="fa fa-plus-square"></i>&nbsp&nbsp&nbspCREATE</a></li>
+        <li><a href="/venues"><i class="fa fa-plus-square"></i>&nbsp&nbspCREATE</a></li>
       <$ } $>
     </ul>
-    <div class="navbar-header navbar-center">
-        <a href="/" class="navbar-brand">
-          <img src="/images/misc/restfulcrawllogo.svg" class="restfulcrawllogo Brand">
-        </a>
-    </div>
     <ul class="nav navbar-nav navbar-right">
       <$ if (user) { $>
       <li><a href="/logout"><i class="fa fa-sign-in"></i>&nbsp&nbspSIGN OUT</a></li>
