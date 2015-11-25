@@ -37,6 +37,8 @@ nav {
   background-color: grey;
 }
 
+
+
 ol, ul {
   list-style: none;
 }
@@ -82,3 +84,50 @@ ol, ul {
   }
 
 /* a { color: white; } */
+
+.navbar-nav > li > a:link,
+.navbar-nav > li > a:visited,
+.navbar-nav > li > a:active {
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-nav > li > a:hover {
+  color: blue;
+}
+
+/* INDEX PAGE */
+
+#current-crawls {
+  padding: 10px 0 0 90px;
+}
+
+#current-crawls h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.75px;
+}
+
+.crawl-instance {
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.crawl-instance:hover img {
+  opacity: 0.75;
+}
+
+.crawl-instance img {
+  width: 150px;
+  border-radius: 5px;
+}
+
+.crawl-instance p {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+}
