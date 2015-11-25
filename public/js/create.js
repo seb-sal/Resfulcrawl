@@ -30,7 +30,7 @@ $(document).ready(function (){
     });
 
     // append to the side bar
-    $('#sidebar').append("<div class='crawl-list'><img src=" + restImg + "><h4><a href=" + restURL + ">" + restName + "</a></h4><div><span class='input-group-addon' id='basic-addon1'>Start Time</span><input type='time' id ='"+index+"' class='form-control' placeholder='Start Time' aria-describedby='basic-addon1'></div></div>")
+    $('#sidebar').append("<div class='crawl-list-index'><img src=" + restImg + "><h4><a href=" + restURL + ">" + restName + "</a></h4><div><span class='input-group-addon' id='basic-addon1'>Start Time</span><input type='time' id ='"+index+"' class='form-control' placeholder='Start Time' aria-describedby='basic-addon1'></div></div>")
     index++;
   });
 
