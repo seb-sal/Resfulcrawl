@@ -95,3 +95,15 @@ ol, ul {
 .navbar-nav > li > a:hover {
   color: blue;
 }
+
+/* INDEX PAGE */
+
+#current-crawls {
+  padding: 10px 0 0 90px;
+}
+
+#current-crawls h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.75px;
+}
