@@ -1,6 +1,6 @@
 console.log('JS loaded!');
 
-var rootUrl = '/api/crawls/';
+var rootUrl = '/crawls/';
 
 $(document).ready(function () {
 
