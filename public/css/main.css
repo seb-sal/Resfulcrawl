@@ -39,14 +39,13 @@ nav {
 }
 
 .restfulcrawllogo{
-  margin-top: -5px;
+  margin-top: -3px;
   height: 33.5px;
-  margin-left: 125px;
-/*  width: 200px;*/
+  margin-left: -25px;
 }
 
 .nav-bar-welcome {
-  margin-top: 19px;
+  margin-top: 20px;
   font-size: 10px;
   color: white;
   margin-left: 20px;
@@ -55,7 +54,9 @@ nav {
   text-transform: uppercase;
 }
 
-
+.fa {
+  margin-top: 5px;
+}
 
 ol, ul {
   list-style: none;
@@ -127,7 +128,7 @@ a { color: white; }
   border-radius: 50%;
   height: 30px;
   margin-top: 12.5px;
-  margin-left: 10px;
+  margin-right: -12.5px;
 }
 
 /* INDEX PAGE */
