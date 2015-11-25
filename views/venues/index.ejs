@@ -31,8 +31,9 @@
       <img src="<$= venue.rating_img_url $>" alt="Link"> <$= venue.review_count $> reviews
       <p><$= venue.categories $></p>
       <p><$- venue.location.display_address.join('<br>') $></p>
-      <p><$- venue.phone $></p>
-      <p><$- venue.snippet_text $></p>
+      <p class="venue-phone"><$- venue.phone $></p>
+      <img class="venue-snippet-image" src="<$= venue.snippet_image_url $>" alt="">
+      <p class="venue-snippet-text"><$- venue.snippet_text $></p>
       <br><br>
   <$ }); $>
 </div>

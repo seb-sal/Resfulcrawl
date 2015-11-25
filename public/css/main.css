@@ -204,9 +204,21 @@ a { color: white; }
   margin-left: 25px;
 }
 
+.venue-snippet-text {
+  margin-top: 17.5px;
+}
+
 .venue-thumb {
+  margin-top: 10px;
+}
+
+.venue-thumb, .venue-snippet-image {
   border-radius: 5px;
   box-shadow: 5px 5px 2.5px #888888;
+}
+
+.venue-phone {
+  margin-bottom: 15px;
 }
 
 .index-title {
@@ -249,6 +261,8 @@ a { color: white; }
   margin-left: 650px;
   font-size: 25px;
 }
+
+
 
 
 
