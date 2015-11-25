@@ -13,7 +13,9 @@
     <ul class="nav navbar-nav navbar-right">
       <$ if (user) { $>
       <li><a href="/logout"><i class="fa fa-sign-in"></i>&nbsp&nbspSIGN OUT</a></li>
+  <!-- Profile Pic Added -->
       <li class="nav-bar-welcome nav navbar-nav navbar-right">Welcome,&nbsp&nbsp<$= user.prof_name $><h1></li>
+      <img class="profile-pic" src="<$= user.prof_picture $>" alt="">
       <$ } else { $>
       <li><a href="/auth/google"><i class="fa fa-sign-in"></i>&nbsp&nbspSIGN IN</a></li>
       <$ } $>

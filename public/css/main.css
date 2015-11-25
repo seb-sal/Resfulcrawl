@@ -54,6 +54,8 @@ nav {
   text-transform: uppercase;
 }
 
+
+
 ol, ul {
   list-style: none;
 }
@@ -117,6 +119,14 @@ a { color: white; }
   height: 52.5px;
   border-radius: 1.5px;
   background-color: rgba(255, 255, 255, .6);
+}
+
+.profile-pic {
+  float: right;
+  border-radius: 50%;
+  height: 35px;
+  margin-top: 10px;
+  margin-left: 3.5px;
 }
 
 /* INDEX PAGE */
