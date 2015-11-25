@@ -26,14 +26,16 @@
   <!-- display each restaurants nearby user input area -->
   <div class="col-xs-6 col-md-9" id="indexRow">
     <$ venues.forEach(function(venue) { $>
+      <div class="venuelist">
         <img src="<$= venue.image_url $>" alt="">
-        <input type="button" onclick="addVenue()" value="Add" id="buttonAddVenue">
+        <input type="button" value="Add" class="AddVenue">
         <h4><a href="<$= venue.url $>"><$= venue.name $></a></h4>
         <img src="<$= venue.rating_img_url $>" alt="Link"> <$= venue.review_count $> reviews
         <p><$= venue.categories $></p>
         <p><$- venue.location.display_address.join('<br>') $></p>
         <p><$- venue.phone $></p>
         <p><img src="<$- venue.snippet_image_url $>" alt=""><$- venue.snippet_text $></p>
+      </div>
     <$ }); $>
   </div>
 
@@ -60,7 +62,7 @@
       <br>
   </div>
 
-  <$- include('../partials/scripts.ejs') $>
+<$- include('../partials/scripts.ejs') $>
 
 </body>
 </html>
