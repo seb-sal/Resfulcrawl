@@ -131,3 +131,10 @@ ol, ul {
   bottom: 0;
   left: 15px;
 }
+
+#sidebar {
+   position: fixed;
+   right: 30px;
+   top: 150px;
+   border: 1px solid black;
+}

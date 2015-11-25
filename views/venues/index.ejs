@@ -7,26 +7,23 @@
 <br>
 <br>
 <div class="col-xs-12 col-md text-center">
-<form method="GET" action="/venues">
-  <input class="form-control" Style="width: 250px" id="place" type="text" name="name" placeholder="ex: Los Angeles, CA"/>
-  <div class="dropdown">
-    <select name="radius">
-      <option value="8000">5 Miles</option>
-      <option value="16000">10 Miles</option>
-      <option value="24000">15 Miles</option>
-      <option value="32000">20 Miles</option>
-      <option value="40000">25 Miles</option>
-    </select>
-  </div>
-  <button id="btnSearch" class="btn btn-primary btn-md center-block" Style="width: 100px" OnClick="btnSearch_Click">Search</button>
-<!--     <input class="search-btn" type="submit" value="Search" /> -->
-</form>
+  <form method="GET" action="/venues">
+    <input class="form-control" Style="width: 250px" id="place" type="text" name="name" placeholder="ex: Los Angeles, CA"/>
+    <div class="dropdown">
+      <select name="radius">
+        <option value="8000">5 Miles</option>
+        <option value="16000">10 Miles</option>
+        <option value="24000">15 Miles</option>
+        <option value="32000">20 Miles</option>
+        <option value="40000">25 Miles</option>
+      </select>
+    </div>
+    <button id="btnSearch" class="btn btn-primary btn-md center-block" Style="width: 100px" OnClick="btnSearch_Click">Search</button>
+  </form>
 </div>
 
-
-
+<div class="col-md-9">
   <$ venues.forEach(function(venue) { $>
-
       <img src="<$= venue.image_url $>" alt="">
       <h4><a href="<$= venue.url $>"><$= venue.name $></a></h4>
       <img src="<$= venue.rating_img_url $>" alt="Link"> <$= venue.review_count $> reviews
@@ -34,10 +31,38 @@
       <p><$- venue.location.display_address.join('<br>') $></p>
       <p><$- venue.phone $></p>
       <p><img src="<$- venue.snippet_image_url $>" alt=""><$- venue.snippet_text $></p>
-
   <$ }); $>
+</div>
 
-  <$- include('../partials/footer.ejs') $>
+ <!-- fixed sidebar implementation css added for #sidebar -->
+<div id="sidebar" class="col-md-3 text-center">
+  <h3 class="form-signin-heading">Create A Crawl</h3>
+  <br>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Start Date</span>
+    <input type="date" class="form-control" placeholder="Name Your Crawl" aria-describedby="basic-addon1">
+  </div>
+  <br>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Title</span>
+    <input type="text" class="form-control" placeholder="Name Your Crawl" aria-describedby="basic-addon1">
+  </div>
+  <br>
+
+  <div class="form-group">
+    <textarea rows="4" class="form-control" placeholder="Description of your crawl..."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-lg">CREATE CRAWL</button>
+  <br>
+  <br>
+
+
+</div>
+
+
   <$- include('../partials/scripts.ejs') $>
 </body>
 </html>
