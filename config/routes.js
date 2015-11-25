@@ -20,6 +20,7 @@ module.exports = function(app, passport) {
   // crawls resources
   router.get('/crawls',     crawlsController.index);
   router.get('/crawls/:id', crawlsController.show);
+  // router.get('/crawls/search/', crawlsController.search);
 
   // yelp api implmentation
   router.get('/venues',     yelpController.index);

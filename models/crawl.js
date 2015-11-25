@@ -9,17 +9,11 @@ var crawlSchema = new mongoose.Schema({
   locations: [
     {
       start: Date,
-      end: Date,
       name: String,
       url: String,
       address: Array,
-      rating: String,
-      review_count: Number,
-      snippet_text: String,
-      Snippet_image_url: String,
       phone: String,
-      image_url: String,
-      categories: Array
+      image_url: String
     }
   ]
 
