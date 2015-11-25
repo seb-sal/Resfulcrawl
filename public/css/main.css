@@ -137,3 +137,29 @@ a { color: white; }
   left: 15px;
 }
 
+.crawl-show {
+  margin-top: 300px;
+}
+
+#indexRow {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+
+#buttonAddVenue {
+  background-color: red;
+  color: white;
+  border-color: grey;
+  border-radius: 5px;
+  margin-left: 650px
+}
+
+#sidebar {
+   position: fixed;
+   right: 30px;
+   top: 150px;
+   border: 1px solid black;
+}
+

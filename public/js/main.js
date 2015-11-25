@@ -5,19 +5,20 @@ var $mainContent;
 var showCrawl = function(e) {
   // get the clicked crawl's id
   var crawlId = $(e.target).data('id');
-
+  var $showbody = $('#showbody');
   // get the crawl's JSON
   $.get("/crawls/" + crawlId)
     .success(function(data) {
       console.log(data);
-
       // template the crawl show page
-      var $crawlShow = $("<br><br><br><br><h1>Suck it, Trebeck!</h1>");
+      var showCrawlTemplate = _.template($('#showTemplate').html());
+      var $showHTML = $(showCrawlTemplate({crawl: data}));
+      console.log($showHTML);
 
       // swap out the page's content
       $mainContent.fadeOut(1000, function() {
-        $mainContent.html($crawlShow);
-        $mainContent.fadeIn();
+        $showbody.append($showHTML);
+        $showbody.fadeIn(1000, function(){});
       });
     });
 };
@@ -27,6 +28,7 @@ $(document).ready(function () {
   var $crawlDetail = $('.crawl-detail');
 
   // compile all templates
+
   var crawlDetailTemplate = _.template($('#crawlDetailTemplate').html());
 
   // render a crawl by templating it and adding a click event
