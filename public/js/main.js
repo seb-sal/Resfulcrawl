@@ -1,41 +1,48 @@
 console.log('JS loaded!');
 
+var $mainContent;
+
+var showCrawl = function(e) {
+  // get the clicked crawl's id
+  var crawlId = $(e.target).data('id');
+
+  // get the crawl's JSON
+  $.get("/crawls/" + crawlId)
+    .success(function(data) {
+      console.log(data);
+
+      // template the crawl show page
+      var $crawlShow = $("<br><br><br><br><h1>Suck it, Trebeck!</h1>");
+
+      // swap out the page's content
+      $mainContent.fadeOut(1000, function() {
+        $mainContent.html($crawlShow);
+        $mainContent.fadeIn();
+      });
+    });
+};
+
 $(document).ready(function () {
-  var $mainContent = $('#main-content');
+  $mainContent = $('#main-content');
   var $crawlDetail = $('.crawl-detail');
 
-  //compile all templates
+  // compile all templates
   var crawlDetailTemplate = _.template($('#crawlDetailTemplate').html());
 
+  // render a crawl by templating it and adding a click event
+  var renderCrawl = function(crawl) {
+    var $crawlHTML = $(crawlDetailTemplate({crawl: crawl}));
+    $crawlHTML.on('click', showCrawl);
+    return $crawlHTML;
+  };
+
+  // get all crawls and render on index
   $.get('/crawls', function(crawls) {
     console.log(crawls);
 
     crawls.forEach(function(crawl) {
-      var crawlHTML = crawlDetailTemplate({crawl: crawl});
-      $crawlDetail.append(crawlHTML);
-      $crawlDetail.append(crawlHTML);
+      var crawlHTML = renderCrawl(crawl);
       $crawlDetail.append(crawlHTML);
     });
   });
-
-
-  // $crawlDetail.html(crawlDetailTemplate({crawl: data[0]}));
-  // $crawlDetail.fadeIn();
-  // // attach event listeners
-  // $('.crawl').on('click', showCrawlDetails);
-
-  // view crawl details
-  // function showCrawlDetails(evt) {
-    // $mainContent.fadeOut();
-    // var crawlId = $(evt.target).attr('data-crawl-id');
-
-  // }
-
-  // $.get(rootUrl)
-  // .success(function(data) {
-  //   console.log(data);
-  //   _.each(data, function(crawls) {
-  //     console.log(crawls);
-  //   });
-  // });
 });
