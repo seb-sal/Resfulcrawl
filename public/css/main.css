@@ -103,7 +103,6 @@ ol, ul {
   height: 150px;
 }
 
-a { color: white; }
 
 .navbar-nav > li > a:link,
 .navbar-nav > li > a:visited,
@@ -262,7 +261,10 @@ a { color: white; }
   font-size: 25px;
 }
 
-
+.crawl-list {
+  border: black solid 1px;
+  padding: 20px;
+}
 
 
 

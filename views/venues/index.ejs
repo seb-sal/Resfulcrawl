@@ -28,7 +28,7 @@
     <$ venues.forEach(function(venue) { $>
       <div class="venuelist">
         <img src="<$= venue.image_url $>" alt="">
-        <input type="button" value="Add" class="AddVenue">
+        <input type="button" value="Add" class="AddVenue" id="buttonAddVenue">
         <h4><a href="<$= venue.url $>"><$= venue.name $></a></h4>
         <img src="<$= venue.rating_img_url $>" alt="Link"> <$= venue.review_count $> reviews
         <p><$= venue.categories $></p>
@@ -41,26 +41,27 @@
 
  <!-- fixed sidebar implementation css added for #sidebar -->
 <div id="sidebar" class="col-md-3 text-center">
+
   <h3 class="form-signin-heading">Create A Crawl</h3>
 
     <br>
     <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">Start Date</span>
-      <input type="date" class="form-control" placeholder="Name Your Crawl" aria-describedby="basic-addon1">
+      <span class="input-group-addon" >Start Date</span>
+      <input type="date" class="form-control" aria-describedby="basic-addon1" id="startDate">
     </div>
     <br>
 
     <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">Title</span>
-      <input type="text" class="form-control" placeholder="Name Your Crawl" aria-describedby="basic-addon1">
+      <span class="input-group-addon" >Title</span>
+      <input type="text" id="title" class="form-control" placeholder="Name Your Crawl" aria-describedby="basic-addon1">
     </div>
     <br>
 
     <div class="form-group">
-      <textarea rows="4" class="form-control" placeholder="Description of your crawl..."></textarea>
+      <textarea rows="4" class="form-control" id="description" placeholder="Description of your crawl..."></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary btn-lg">CREATE CRAWL</button>
+    <button type="submit" id= "createCrawl" class="btn btn-primary btn-lg">CREATE CRAWL</button>
     <br>
     <br>
 
