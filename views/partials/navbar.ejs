@@ -2,8 +2,9 @@
   <div class="container content">
     <ul class="nav navbar-nav navbar-left">
       <li><a href="#"><i class="fa fa-search"></i>&nbsp&nbspFIND</a></li>
-      <li><a href="/venues"><i class="fa fa-plus-square"></i>&nbsp&nbsp&nbspCREATE</a></li>
-      <li><a href="#"><i class="fa fa-child"></i></i>&nbsp&nbspJOIN</a></li>
+      <$ if (user) { $>
+        <li><a href="/venues"><i class="fa fa-plus-square"></i>&nbsp&nbsp&nbspCREATE</a></li>
+      <$ } $>
     </ul>
     <div class="navbar-header navbar-center">
         <a href="/" class="navbar-brand">
@@ -14,7 +15,7 @@
       <$ if (user) { $>
       <li><a href="/logout"><i class="fa fa-sign-in"></i>&nbsp&nbspSIGN OUT</a></li>
   <!-- Profile Pic Added -->
-      <li class="nav-bar-welcome nav navbar-nav navbar-right">Welcome,&nbsp&nbsp<$= user.prof_name $><h1></li>
+      <li class="nav-bar-welcome nav navbar-nav navbar-right">&nbsp&nbsp<$= user.prof_name $><h1></li>
       <img class="profile-pic" src="<$= user.prof_picture $>" alt="">
       <$ } else { $>
       <li><a href="/auth/google"><i class="fa fa-sign-in"></i>&nbsp&nbspSIGN IN</a></li>

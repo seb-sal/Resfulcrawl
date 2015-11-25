@@ -41,7 +41,8 @@ nav {
 .restfulcrawllogo{
   margin-top: -5px;
   height: 33.5px;
-  padding-left: 65px;
+  margin-left: 125px;
+/*  width: 200px;*/
 }
 
 .nav-bar-welcome {
@@ -124,9 +125,9 @@ a { color: white; }
 .profile-pic {
   float: right;
   border-radius: 50%;
-  height: 35px;
-  margin-top: 10px;
-  margin-left: 3.5px;
+  height: 30px;
+  margin-top: 12.5px;
+  margin-left: 10px;
 }
 
 /* INDEX PAGE */
