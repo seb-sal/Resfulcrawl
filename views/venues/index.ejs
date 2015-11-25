@@ -27,7 +27,7 @@
   <$ venues.forEach(function(venue) { $>
 
       <img class="venue-thumb"src="<$= venue.image_url $>" alt="">
-      <input type="button" onclick="addVenue()" value="Add" id="buttonAddVenue">
+      <input type="button" class="addVenue" value="Add" id="buttonAddVenue">
       <h4><a class="venue-name"href="<$= venue.url $>"><$= venue.name $></a></h4>
       <img src="<$= venue.rating_img_url $>" alt="Link"> <$= venue.review_count $> reviews
       <p><$= venue.categories $></p>
