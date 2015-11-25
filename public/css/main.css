@@ -37,6 +37,8 @@ nav {
   background-color: grey;
 }
 
+
+
 ol, ul {
   list-style: none;
 }
@@ -82,3 +84,14 @@ ol, ul {
   }
 
 /* a { color: white; } */
+
+.navbar-nav > li > a:link,
+.navbar-nav > li > a:visited,
+.navbar-nav > li > a:active {
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-nav > li > a:hover {
+  color: blue;
+}
