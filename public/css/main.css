@@ -41,7 +41,8 @@ nav {
 .restfulcrawllogo{
   margin-top: -5px;
   height: 33.5px;
-  padding-left: 65px;
+  margin-left: 125px;
+/*  width: 200px;*/
 }
 
 .nav-bar-welcome {
@@ -53,6 +54,8 @@ nav {
   letter-spacing: .5px;
   text-transform: uppercase;
 }
+
+
 
 ol, ul {
   list-style: none;
@@ -117,6 +120,14 @@ a { color: white; }
   height: 52.5px;
   border-radius: 1.5px;
   background-color: rgba(255, 255, 255, .6);
+}
+
+.profile-pic {
+  float: right;
+  border-radius: 50%;
+  height: 30px;
+  margin-top: 12.5px;
+  margin-left: 10px;
 }
 
 /* INDEX PAGE */
