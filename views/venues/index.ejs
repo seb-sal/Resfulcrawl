@@ -6,7 +6,7 @@
 
 <br>
 <br>
-<div class="col-xs-12 col-md text-center">
+<div class="col-xs-12 col-md text-center venue-search-bar">
   <form method="GET" action="/venues">
     <input class="form-control" Style="width: 250px" id="place" type="text" name="name" placeholder="ex: Los Angeles, CA"/>
     <div class="dropdown">
@@ -25,14 +25,15 @@
 <div class="col-xs-6 col-md-9" id="indexRow">
   <$ venues.forEach(function(venue) { $>
 
-      <img src="<$= venue.image_url $>" alt="">
+      <img class="venue-thumb"src="<$= venue.image_url $>" alt="">
       <input type="button" onclick="addVenue()" value="Add" id="buttonAddVenue">
-      <h4><a href="<$= venue.url $>"><$= venue.name $></a></h4>
+      <h4><a class="venue-name"href="<$= venue.url $>"><$= venue.name $></a></h4>
       <img src="<$= venue.rating_img_url $>" alt="Link"> <$= venue.review_count $> reviews
       <p><$= venue.categories $></p>
       <p><$- venue.location.display_address.join('<br>') $></p>
       <p><$- venue.phone $></p>
-      <p><img src="<$- venue.snippet_image_url $>" alt=""><$- venue.snippet_text $></p>
+      <p><$- venue.snippet_text $></p>
+      <br><br>
   <$ }); $>
 </div>
 
