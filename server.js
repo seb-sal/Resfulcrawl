@@ -55,17 +55,15 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 require('./config/passport')(passport);
+
 // Useful for debugging the state of requests.
-
-require('./config/routes')(app, passport);
-
 app.use(debugReq);
 
 // imports all the content of the data.json file as an object
 app.locals.appdata = require('./data.json');
 
 // Defines all of our "dynamic" routes.
-
+require('./config/routes')(app, passport);
 
 // Catches all 404 routes.
 app.use(function(req, res, next) {

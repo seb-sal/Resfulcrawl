@@ -3,49 +3,46 @@ var express = require('express'),
 
 // Require controllers.
 var welcomeController = require('../controllers/welcome');
-var usersController   = require('../controllers/users');
-var crawlsController = require('../controllers/crawls');
-
-// yelp api implmentation
-var yelpController = require('../controllers/yelp');
-
-// root path:
-
-
-// users resource paths:
+var crawlsController  = require('../controllers/crawls');
+var yelpController    = require('../controllers/yelp');
 
 module.exports = function(app, passport) {
-  router.get('/users/:id', usersController.show);
-  router.get('/users',     usersController.index);
 
-  router.get('/crawls', crawlsController.index);
+  // accept any routes that match the given path
+  // in part or in whole, and send them to the
+  // express.Router that is the second param
+  app.use('/', router);
+
+  // welcome/root path
+  router.get('/', welcomeController.index);
+
+  // crawls resources
+  router.get('/crawls',     crawlsController.index);
   router.get('/crawls/:id', crawlsController.show);
+
   // yelp api implmentation
-  router.use('/venues', yelpController);
+  router.get('/venues',     yelpController.index);
 
+  // login/logout "session" routes
+  router.get(
+    '/auth/google',
+    passport.authenticate('google', {scope: ['profile', 'email'] })
+  );
 
-  app.get('/', welcomeController.index);
+  router.get(
+    '/oauth2callback',
+    passport.authenticate(
+      'google',
+      {
+        successRedirect : '/',
+        failureRedirect : '/'
+      }
+    )
+  );
 
-
-  app.get('/auth/google', passport.authenticate(
-    'google',
-    {scope: ['profile', 'email'] }
-    ));
-
-  app.get('/oauth2callback', passport.authenticate(
-    'google',
-    {
-    successRedirect : '/',
-    failureRedirect : '/'
-    }
-    ));
-
-  app.get('/logout', function(req, res) {
+  router.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
   });
-
-  app.use('/api', router);
-
 };
 
