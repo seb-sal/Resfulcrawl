@@ -142,7 +142,6 @@ ol, ul {
   padding: 10px;
   border: 2px solid grey;
   border-radius: 5px;
-
 }
 
 #buttonAddVenue {
@@ -151,5 +150,11 @@ ol, ul {
   border-color: grey;
   border-radius: 5px;
   margin-left: 650px
+}
 
+#sidebar {
+   position: fixed;
+   right: 30px;
+   top: 150px;
+   border: 1px solid black;
 }
