@@ -64,7 +64,6 @@ ol, ul {
   margin-top: 17.5px;
 }
 
-
 @media (min-width: 47em) {
   .layout .primary {
     width: 49.15245%;
@@ -83,7 +82,13 @@ ol, ul {
     padding-bottom: 5px;
   }
 
-/* a { color: white; } */
+.icon {
+  border-radius: 5px;
+  width: 150px;
+  height: 150px;
+}
+
+a { color: white; }
 
 .navbar-nav > li > a:link,
 .navbar-nav > li > a:visited,
@@ -132,7 +137,6 @@ ol, ul {
   left: 15px;
 }
 
-
 .crawl-show {
   margin-top: 300px;
 }
@@ -158,3 +162,4 @@ ol, ul {
    top: 150px;
    border: 1px solid black;
 }
+
