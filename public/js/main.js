@@ -19,6 +19,7 @@ var showCrawl = function(e) {
       $mainContent.fadeOut(1000, function() {
         $showbody.append($showHTML);
         $showbody.fadeIn(1000, function(){});
+
       });
     });
 };

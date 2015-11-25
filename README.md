@@ -60,7 +60,60 @@ __Wireframe link:__      [Click here](https://goo.gl/xe65Ov)
 3. Google OAuth
 4. Passport.js
 
-FerdieQ
+--------
+
+
+##Resful Crawl Documentation
+
+
+###Please take noe when using the API:
+
+- **No authentication** is required to access this API. All resources are open and available.
+
+###Crawls:
+
+A crawl returns the _id, title, date_of_crawl, description, user_id, starting date, ending date and the venue id for all crawls.
+
+####GET crawls/
+
+**Note:** This is a sepcial resource call. Always call /crawls
+
+
+####Example request
+GET: ```localhost:3000/crawls```
+GET: ```localhost:3000/crawls/ID```
+
+**Result:**
+
+```[
+{
+_id: "5655f85f88b262c6c31b5c9a",
+title: "Jasons crawl",
+date_of_crawl: "2015-11-25T18:05:19.647Z",
+description: "Eat even mor BBQ till we drop!!!",
+user_id: "5655f85f88b262c6c31b5c91",
+__v: 0,
+locations: [
+{
+start: "1970-01-01T00:00:01.100Z",
+end: "1970-01-01T00:00:01.400Z",
+name: "Yuzu Shabu",
+_id:""5655f85f88b262c6c31b5c9d",
+]```
+
+###Fields:
+
+
+- **id:** - returns the crawl token id.
+- **title:** - returns the crawl name. eg. Joey's Crawl.
+- **date_of_crawl:** - returns the date & time the crawl was created. 
+- **description:** - returns a brief description
+- **user_id:** - returns the user token id.
+- **start:** - returns to starting date of the crawl.
+- **end:** - returns to the ending date of the crawl.
+- **name:** - returns the name of the venue.
+
+
 
 
 
