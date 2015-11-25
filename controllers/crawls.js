@@ -7,12 +7,22 @@ var index = function(req, res, next) {
 }
 
 var show = function(req, res, next) {
-  Crawl.find(req.params.id, function(error, crawl){
+  Crawl.findById(req.params.id, function(error, crawl){
     res.json(crawl);
   });
 };
 
+//findByName
+var search = function(req, res, next) {
+  console.log("hi");
+  Crawl.findByName(req.params.title, function(error, crawl){
+    res.json(crawl);
+  });
+};
+
+
 module.exports = {
   index: index,
-  show: show
+  show: show,
+  search: search
 };
