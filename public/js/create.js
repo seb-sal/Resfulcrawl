@@ -68,7 +68,7 @@ $(document).ready(function (){
       })
     }).success(function(data){
       console.log(data);
-      new Crawl(data);
+      showCrawl(data._id);
     });
 
     //go to show page for the new crawl
