@@ -2,9 +2,8 @@ console.log('JS loaded!');
 
 var $mainContent;
 
-var showCrawl = function(e) {
+var showCrawl = function(crawlId) {
   // get the clicked crawl's id
-  var crawlId = $(e.target).data('id');
   var $showbody = $('#showbody');
   // get the crawl's JSON
   $.get("/crawls/" + crawlId)
@@ -35,7 +34,10 @@ $(document).ready(function () {
   // render a crawl by templating it and adding a click event
   var renderCrawl = function(crawl) {
     var $crawlHTML = $(crawlDetailTemplate({crawl: crawl}));
-    $crawlHTML.on('click', showCrawl);
+    $crawlHTML.on('click', function(e) {
+      var crawlId = $(e.target).data('id');
+      showCrawl(crawlId)
+    });
     return $crawlHTML;
   };
 

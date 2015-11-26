@@ -46,25 +46,30 @@ $(document).ready(function (){
     var title = $sidebar.find('#title').val();
     var description = $sidebar.find('#description').val();
 
-    for (var i=0; i <= index; i++) {
-      var time = $sidebar.find('input#' + i).val();
-      console.log('time')
+    // debugger;
 
+    for (var i=0; i < locations.length; i++) {
+      var time = $sidebar.find('input#' + i).val();
       locations[i].start = time;
 
     }
-    console.log(locations)
+    console.log(locations);
 
-    //ajax post for /crawls/
-    // $.post("/crawls", {
-    //   title: title,
-    //   date_of_crawl: date,
-    //   description: description,
-    //   locations: locations
-    //   }).success(function(data){
-    //     console.log(data);
-    //     new Crawl(data);
-    //   });
+    // ajax post for /crawls/
+    $.ajax({
+      method: "POST",
+      url: "/crawls",
+      contentType: "application/json",
+      data: JSON.stringify({
+        title: title,
+        date_of_crawl: date,
+        description: description,
+        locations: locations
+      })
+    }).success(function(data){
+      console.log(data);
+      showCrawl(data._id);
+    });
 
     //go to show page for the new crawl
 
