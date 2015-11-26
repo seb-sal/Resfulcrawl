@@ -12,12 +12,6 @@ body {
   letter-spacing: .25px;
 }
 
-body {
-/*  font-size: 14px;
-  padding: 50px;*/
-
-}
-
 #header {
   position: relative;
   display: block;
@@ -72,6 +66,32 @@ ol, ul {
 .btn-primary {
   background-color: white;
   color: grey;
+  border-color: grey;
+}
+
+.style-color {
+  background-color: rgba(255, 255, 255, .975);
+  border-color: rgba(255, 255, 255, .5);
+  color: grey;
+
+}
+
+.style-color:hover {
+  color: #ED6743;
+  background-color: rgba(255, 255, 255, .975);
+  border-color: rgba(255, 255, 255, .5);
+}
+
+.style-color.active {
+  color: #ED6743;
+  background-color: rgba(255, 255, 255, .975);
+  border-color: rgba(255, 255, 255, .5);
+}
+
+.search-create-btn:hover,
+.create-create-btn:hover {
+  color: #fb7121;
+  background-color: rgba(0, 0, 0, .1);
   border-color: grey;
 }
 
@@ -192,6 +212,12 @@ ol, ul {
   margin-left: 350px;
 }
 
+#buttonAddVenue:hover {
+  color: red;
+  background-color: rgba(0, 0, 0, .1);
+  border-color: grey;
+}
+
 .venue-search-bar {
   margin-top: 25px;
 }
@@ -217,10 +243,11 @@ ol, ul {
 
 .venue-snippet-text {
   margin-top: 17.5px;
+  margin-bottom: 45px;
 }
 
 .venue-thumb {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .venue-thumb, .venue-snippet-image {
