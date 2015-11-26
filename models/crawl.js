@@ -8,10 +8,10 @@ var crawlSchema = new mongoose.Schema({
   user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   locations: [
     {
-      start: Date,
+      start: String,
       name: String,
       url: String,
-      address: Array,
+      address: String,
       phone: String,
       image_url: String
     }
