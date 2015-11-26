@@ -7,7 +7,7 @@ var index = function(req, res, next) {
 }
 
 var show = function(req, res, next) {
-  Crawl.find(req.params.id, function(error, crawl){
+  Crawl.findById(req.params.id, function(error, crawl){
     res.json(crawl);
   });
 };

@@ -9,8 +9,6 @@ var index = 0;
 $(document).ready(function (){
 
   $("input.AddVenue").on('click', function(event) {
-
-    console.log(event.target);
     $parent = $(event.target.parentNode);
 
     //finding restaurant image_url, name, address, phone, url for ajax post call
@@ -36,7 +34,6 @@ $(document).ready(function (){
 
   //event listener for 'click' on #createCrawl
   $("#createCrawl").on('click', function (event) {
-    console.log("hi");
     //prevent page reload
     event.preventDefault();
 
@@ -46,15 +43,11 @@ $(document).ready(function (){
     var title = $sidebar.find('#title').val();
     var description = $sidebar.find('#description').val();
 
-    // debugger;
-
     for (var i=0; i < locations.length; i++) {
       var time = $sidebar.find('input#' + i).val();
       locations[i].start = time;
 
     }
-    console.log(locations);
-
     // ajax post for /crawls/
     $.ajax({
       method: "POST",
@@ -67,13 +60,13 @@ $(document).ready(function (){
         locations: locations
       })
     }).success(function(data){
-      console.log(data);
+      console.log(data._id);
       showCrawl(data._id);
     });
 
     //go to show page for the new crawl
 
-})
+  })
 
 })
 

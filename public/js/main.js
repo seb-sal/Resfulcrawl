@@ -35,8 +35,10 @@ $(document).ready(function () {
   var renderCrawl = function(crawl) {
     var $crawlHTML = $(crawlDetailTemplate({crawl: crawl}));
     $crawlHTML.on('click', function(e) {
-      var crawlId = $(e.target).data('id');
-      showCrawl(crawlId)
+      console.log(e.target);
+      var crawlId = $(e.target).parent().data('id');
+      console.log(crawlId);
+      showCrawl(crawlId);
     });
     return $crawlHTML;
   };
