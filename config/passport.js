@@ -17,7 +17,8 @@ module.exports = function(passport) {
           var newUser = new User({
             prof_name: profile.displayName,
             prof_email: profile.emails[0].value,
-            prof_picture: profile.photos[0].value
+            prof_picture: profile.photos[0].value,
+            googleId: profile.id
           });
           newUser.save(function(err){
             if(err) return done(err);
