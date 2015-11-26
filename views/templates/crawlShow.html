@@ -1,12 +1,12 @@
 <script type="text/template" id="showTemplate">
 
   <div class="crawl-show">
-    <p class="crawl-show-title"> <%= crawl[0].title %> </p><br>
-    <p class="crawl-show-description"> <%= crawl[0].description %> </p><br>
-    <a href="<%= crawl[0].locations[0].url %>"><img class="crawl-show-thumb" src="<%= crawl[0].locations[0].image_url %>"></a>
-    <p class="crawl-show-restaurant"> <%= crawl[0].locations[0].phone %> </p>
-    <p class="crawl-show-restaurant"> <%= crawl[0].locations[0].address %> </p>
-    <p class="crawl-show-restaurant"> <%= crawl[0].locations[0].name %> </p>
+    <p class="crawl-show-title"> <%= crawl.title %> </p><br>
+    <p class="crawl-show-description"> <%= crawl.description %> </p><br>
+    <a href="<%= crawl.locations[0].url %>"><img class="crawl-show-thumb" src="<%= crawl.locations[0].image_url %>"></a>
+    <p class="crawl-show-restaurant"> <%= crawl.locations[0].phone %> </p>
+    <p class="crawl-show-restaurant"> <%- crawl.locations[0].address %> </p>
+    <p class="crawl-show-restaurant"> <%= crawl.locations[0].name %> </p>
   </div>
 
 </script>

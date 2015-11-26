@@ -4,7 +4,8 @@ var mongoose = require('mongoose'),
 var userSchema = new mongoose.Schema({
   prof_name: String,
   prof_email: String,
-  prof_picture: String
+  prof_picture: String,
+  googleId: String
 });
 
 var User = mongoose.model('User', userSchema);
