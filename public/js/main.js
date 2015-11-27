@@ -16,6 +16,7 @@ var showCrawl = function(crawlId) {
 
       // swap out the page's content
       $mainContent.fadeOut(1000, function() {
+
         $showbody.append($showHTML);
         $showbody.fadeIn(1000, function(){});
 
