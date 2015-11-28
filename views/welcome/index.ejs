@@ -15,7 +15,7 @@
           <form method="GET" action="/venues">
             <input class="form-control" Style="width: 250px" id="place" type="text" name="place[name]" placeholder="ex: Los Angeles, CA"/>
             <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle style-color" type="button" data-toggle="dropdown">Miles
+              <button class="btn dropdown-toggle style-color" type="button" data-toggle="dropdown">Miles
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
@@ -26,17 +26,24 @@
                 <li><a href="#">25  Miles</a></li>
               </ul>
             </div>
-            <button id="btnSearch" class="btn btn-primary btn-md center-block style-color" Style="width: 100px" OnClick="btnSearch_Click">Search</button>
+            <button id="btnSearch" class="btn btn-md center-block style-color" Style="width: 100px" OnClick="btnSearch_Click">Search</button>
           </form>
         </div>
       </div>
     </header> <!-- END HEADER -->
 
-    <section id="current-crawls">
-      <h3>Upcoming Crawls</h3>
-      <div class="crawl-list crawl-detail">
-      </div>
-    </section>
+    <div class="container">
+      <div class="col-xs-12">
+      <h3 class="upcoming-crawls-headline">Upcoming Crawls</h3>
+        <div class="container">
+          <div class="row">
+            <div class="crawl-list crawl-detail">
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+
   </main>
 
   <section id="showbody"></section>
