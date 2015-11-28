@@ -6,8 +6,23 @@ var welcomeController = require('../controllers/welcome');
 var crawlsController  = require('../controllers/crawls');
 var yelpController    = require('../controllers/yelp');
 
+
+
+
 module.exports = function(app, passport) {
 
+  function isAuthenticated(req, res, next) {
+
+    // do any checks you want to in here
+
+    // CHECK THE USER STORED IN SESSION FOR A CUSTOM VARIABLE
+    // you can do this however you want with whatever variables you set up
+    if (req.user)
+        return next();
+
+    // IF A USER ISN'T LOGGED IN, THEN REDIRECT THEM SOMEWHERE
+    res.redirect('/');
+}
   // accept any routes that match the given path
   // in part or in whole, and send them to the
   // express.Router that is the second param
@@ -24,7 +39,7 @@ module.exports = function(app, passport) {
   // router.get('/crawls/search/', crawlsController.search);
 
   // yelp api implmentation
-  router.get('/venues',     yelpController.index);
+  router.get('/venues', isAuthenticated, yelpController.index);
 
   // login/logout "session" routes
   router.get(
