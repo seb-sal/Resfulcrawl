@@ -37,11 +37,14 @@ $(document).ready(function (){
     //prevent page reload
     event.preventDefault();
 
+
     // gather user input
     $sidebar = $(event.target.parentNode);
     var date = $sidebar.find('#startDate').val();
     var title = $sidebar.find('#title').val();
     var description = $sidebar.find('#description').val();
+
+
 
     for (var i=0; i < locations.length; i++) {
       var time = $sidebar.find('input#' + i).val();
@@ -60,6 +63,7 @@ $(document).ready(function (){
         locations: locations
       })
     }).success(function(data){
+
       console.log(data._id);
       showCrawl(data._id);
     });
