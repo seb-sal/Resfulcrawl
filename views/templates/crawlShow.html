@@ -24,20 +24,28 @@
           <p class="crawl-show-restaurant-info"> <%- crawl.locations[i].address %> </p>
           <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].phone %> </p>
           <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].start %> </p>
-        <% } %>
+          <ul>
+             <li>
+               <span class="btn btn-info btn-xs edit save-edit">Update</span>
+             </li>
+           </ul
+         <% } %>
         </div>
       </div>
 
       <div class="col-xs-6 show-lower-half-right">
-
         <div id="map">
           <!-- google map div will go here -->
         </div>
+        <div>
+         <ul>
+           <li>
+             <span class="btn btn-warning btn-md edit save-edit">RSVP</span>
+             <span class="btn btn-danger btn-md edit delete-crawl">Delete</span>
+           </li>
+          </ul>
+        </div>
       </div>
+
 </script>
-
-
-
-
-
 
