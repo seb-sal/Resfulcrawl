@@ -1,16 +1,5 @@
 <script type="text/template" id="showTemplate">
-  <script src="https://maps.googleapis.com/maps/api/js"></script>
-     <script>
-        function initialize() {
-           var mapOptions = {
-             center: new google.maps.LatLng(44.5403, -78.5463),
-             zoom: 8,
-             mapTypeId: google.maps.MapTypeId.ROADMAP
-           }
-           var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-         };
-         google.maps.event.addDomListener(window, 'resize', initialize);
-     </script>
+
   <div class="container show-upper-half">
 
       <div class="col-xs-6 show-upper-half-left">
@@ -38,15 +27,17 @@
         <% } %>
         </div>
       </div>
-      <div id="map" onload="initialize()" ></div>
+
       <div class="col-xs-6 show-lower-half-right">
+
+        <div id="map">
           <!-- google map div will go here -->
-
+        </div>
       </div>
-
-  </div>
-
 </script>
+
+
+
 
 
 
