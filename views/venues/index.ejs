@@ -19,26 +19,27 @@
         <option value="40000">25 Miles</option>
       </select>
     </div>
-    <button id="btnSearch" class="btn btn-primary btn-md center-block search-create-btn" Style="width: 100px" OnClick="btnSearch_Click">Search</button>
+    <button id="btnSearch" class="btn btn-md center-block search-create-btn" Style="width: 100px" OnClick="btnSearch_Click">Search</button>
   </form>
 </div>
 
   <!-- display each restaurants nearby user input area -->
-  <div class="col-xs-6 col-md-9" id="indexRow">
-    <$ venues.forEach(function(venue) { $>
-      <div class="venuelist">
-        <img class="venue-thumb" src="<$= venue.image_url $>" alt="">
-        <input type="button" value="Add" class="AddVenue" id="buttonAddVenue">
-        <h4 class="venue-name"><a href="<$= venue.url $>"><$= venue.name $></a></h4>
-        <img src="<$= venue.rating_img_url $>" alt="Link"> <$= venue.review_count $> reviews
-        <p><$= venue.categories $></p>
-        <p><$- venue.location.display_address.join('<br>') $></p>
-        <p class="venue-phone"><$- venue.phone $></p>
-        <img class="venue-snippet-image" src="<$- venue.snippet_image_url $>" alt="">
-        <p class="venue-snippet-text"><$- venue.snippet_text $></p>
-      </div>
-    <$ }); $>
-  </div>
+    <div class="col-xs-6 col-md-9" id="indexRow">
+      <$ venues.forEach(function(venue) { $>
+        <div class="venuelist">
+          <img class="venue-thumb" src="<$= venue.image_url $>" alt="">
+          <input type="button" value="Add" class="AddVenue" id="buttonAddVenue">
+          <h4 class="venue-name"><a href="<$= venue.url $>"><$= venue.name $></a></h4>
+          <img class="venue-rating" src="<$= venue.rating_img_url $>" alt="Link"> <$= venue.review_count $> reviews
+          <p class="venue-category"><$= venue.categories $></p>
+          <p class="venue-address"><$- venue.location.display_address.join('<br>') $></p>
+          <p class="venue-phone"><$- venue.phone $></p>
+          <img class="venue-snippet-image" src="<$- venue.snippet_image_url $>" alt="">
+          <p class="venue-snippet-text"><$- venue.snippet_text $></p>
+          <div class="venue-snippet-border"></div>
+        </div>
+      <$ }); $>
+    </div>
 
  <!-- fixed sidebar implementation css added for #sidebar -->
 <div id="sidebar" class="col-md-3 text-center">
@@ -62,7 +63,7 @@
       <textarea rows="4" class="form-control" id="description" placeholder="Description of your crawl..."></textarea>
     </div>
 
-    <button type="submit" id= "createCrawl" class="btn btn-primary btn-lg create-create-btn">CREATE CRAWL</button>
+    <button type="submit" id= "createCrawl" class="btn btn-lg create-create-btn">CREATE CRAWL</button>
     <br>
     <br>
 
