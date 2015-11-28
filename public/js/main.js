@@ -53,18 +53,13 @@ $(document).ready(function () {
       $crawlDetail.append(crawlHTML);
     });
   });
-}); //document ready
+});
 
+var map;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
+    center: {lat: 34.0500, lng: 118.2500},
     zoom: 8
   });
-  console.log("map loaded!!");
 }
-function loadScript() {
-  var script = document.createElement("script");
-  script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyCMQPMJeW4oeP0r22mFVGvq-BnAaGqXvoU&callback=initMap";
-  document.body.appendChild(script);
-}
-window.onload = loadScript;
+

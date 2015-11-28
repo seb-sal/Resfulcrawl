@@ -277,13 +277,15 @@ ol, ul {
   font-size: 25px;
 }
 
-.show-lower-half {
-/*  background-color: purple;*/
+/*.show-lower-half {
+  background-color: purple;*/
   width: 965px;
+  height: 550px;
 }
 
 .show-lower-half-left {
 /*  background-color: orange;*/
+  height: 550px;
 }
 
 .show-lower-half-right {
