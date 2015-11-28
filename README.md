@@ -9,7 +9,17 @@
 
 ---
 #### Our mission:
-> At RESTful Crawl Inc, our mission is to offer the simpliest 
+> At RESTful Crawl Inc,  our mission is to server our users and offer them the best food crawl experience ever! 
+
+(who we are)We are a startup company devoted to serving: the young, the innovative, the non-drinkers and the food lovers.  
+
+At RESTful Crawl Inc,  we are devoted to our users, and our mission, is to help You create, organize and plan your own food crawls - in your area- so your closest friends or caring strangers can join you to explore unique and tasteful dishes
+
+(What we do)
+
+
+> With a simply log
+
 
 
 ####Vision:
