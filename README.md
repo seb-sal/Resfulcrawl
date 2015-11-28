@@ -1,16 +1,24 @@
 
-![We crawl for FOOD](https://slack-files.com/files-pri-safe/T0351JZQ0-F0F2NAW9M/restfulcrawllogo.svg?c=1448300973-e6b764d751a2588336422c781d575f43d2c118e0)
+![[We crawl for FOOD][https://thawing-badlands-4075.herokuapp.com/]](https://i.imgur.com/caEldRa.png)
 
-__Web app:__ [Click here](https://thawing-badlands-4075.herokuapp.com/)
+* __Web App:__ [Click here](https://thawing-badlands-4075.herokuapp.com/)
 
-__Presentation:__        [Click here](http://goo.gl/kQ1zjY) 
+* __KickStarter presentation:__        [Click here](http://goo.gl/kQ1zjY) 
 
-__Wireframe link:__      [Click here](https://goo.gl/xe65Ov)
+* __Wireframe link:__      [Click here](https://goo.gl/xe65Ov)
 
 ---
+#### Our mission:
+> At RESTful Crawl Inc, our mission is to offer the simpliest 
 
-##Product description:
->A **simple**, **interactive**, **user-friendly** web app that will let You to create or join local food crawls.
+
+####Vision:
+- 
+
+#### What does our Web app do?
+RESTful Crawl is an **interactive** and **user-friendly** web app that will let you create or join food crawls near your.
+
+
 
 -----
 
