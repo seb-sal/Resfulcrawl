@@ -15,6 +15,8 @@ $(document).ready(function (){
     var restImg = $parent.find('img').attr('src');
     var restName = $parent.find('a').html();
     var restAddress = $parent.find('p').eq(1).html();
+    restAddress = restAddress.replace(/<br>\\*/g, ' ');
+    console.log(restAddress);
     var restPhone = $parent.find('p').eq(2).html();
     var restURL = $parent.find('a').attr('href');
 
@@ -37,11 +39,14 @@ $(document).ready(function (){
     //prevent page reload
     event.preventDefault();
 
+
     // gather user input
     $sidebar = $(event.target.parentNode);
     var date = $sidebar.find('#startDate').val();
     var title = $sidebar.find('#title').val();
     var description = $sidebar.find('#description').val();
+
+
 
     for (var i=0; i < locations.length; i++) {
       var time = $sidebar.find('input#' + i).val();
@@ -60,6 +65,7 @@ $(document).ready(function (){
         locations: locations
       })
     }).success(function(data){
+
       console.log(data._id);
       showCrawl(data._id);
     });

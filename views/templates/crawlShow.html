@@ -1,17 +1,37 @@
 <script type="text/template" id="showTemplate">
 
-  <div class="crawl-show">
-    <p class="crawl-show-title"> <%= crawl.title %> </p><br>
-    <p class="crawl-show-description"> <%= crawl.description %> </p><br>i
-    <% for (i=0; i < crawl.locations.length; i++) { %>
+  <div class="container show-upper-half">
 
-      <a href="<%= crawl.locations[i].url %>"><img class="crawl-show-thumb" src="<%= crawl.locations[i].image_url %>"></a>
-      <p class="crawl-show-restaurant"> <%= crawl.locations[i].phone %> </p>
-      <p class="crawl-show-restaurant"> <%- crawl.locations[i].address %> </p>
-      <p class="crawl-show-restaurant"> <%= crawl.locations[i].name %> </p>
-      <p class="crawl-show-restaurant"> <%= crawl.locations[i].start %> </p>
+      <div class="col-xs-6 show-upper-half-left">
+        <p class="crawl-show-title"> <%= crawl.title %> </p><br>
+      </div>
 
-    <% } %>
+      <div class="col-xs-6 show-upper-half-right">
+        <p class="crawl-show-description"> <%= crawl.description %> </p><br>
+      </div>
+
+  </div>
+
+  <div class="container show-lower-half">
+
+      <div class="col-xs-6 show-lower-half-left">
+        <div>
+        <% for (i=0; i < crawl.locations.length; i++) { %>
+          <a href="<%= crawl.locations[i].url %>"><img class="crawl-show-thumb" src="<%= crawl.locations[i].image_url %>"></a>
+        </div>
+        <div class="crawl-show-restaurant-group">
+          <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].name %> </p>
+          <p class="crawl-show-restaurant-info"> <%- crawl.locations[i].address %> </p>
+          <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].phone %> </p>
+          <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].start %> </p>
+        <% } %>
+        </div>
+      </div>
+
+      <div class="col-xs-6 show-lower-half-right">
+          <!-- google map div will go here -->
+          <div class=google-map></div>
+      </div>
 
   </div>
   <div id="map"></div>
