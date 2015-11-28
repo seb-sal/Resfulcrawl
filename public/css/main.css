@@ -103,24 +103,6 @@ ol, ul {
   margin-top: 15px;
 }
 
-@media (min-width: 47em) {
-  .layout .primary {
-    width: 49.15245%;
-    float: left;
-    margin-right: 1.69492%;
-  }
-
-  .layout .secondary {
-    width: 45.15254%;
-    float: right;
-    margin-right: 0;
-  }
-  .layout .secondary h1 {
-    font-size: 1.8rem;
-    color: #bd3613;
-    padding-bottom: 5px;
-  }
-
 .icon {
   border-radius: 5px;
   width: 150px;
@@ -187,10 +169,6 @@ ol, ul {
   position: absolute;
   bottom: 0;
   left: 15px;
-}
-
-.crawl-show {
-  margin-top: 300px;
 }
 
 #indexRow {
@@ -265,45 +243,88 @@ ol, ul {
   text-transform: uppercase;
 }
 
-.crawl-show {
-  width: 100%;
+.show-upper-half {
+/*  background-color: red;*/
+  margin-top: 75px;
+  height: 100px;
+}
+
+.show-upper-half-left {
+/*  background-color: green;*/
+  height: 100px;
+}
+
+.show-upper-half-right {
+/*  background-color: blue;*/
+  height: 100px;
 }
 
 .crawl-show-title {
   font-size: 50px;
-  margin-left: 75px;
-  margin-top: -175px;
+  float: left;
+  margin-left: -5px;
+  line-height: 50px;
   text-transform: uppercase;
-  letter-spacing: -1px;
+  letter-spacing: -.5px;
+}
+
+.crawl-show-description {
+  float: right;
+  margin-top: 20px;
+  margin-right: -25px;
+  font-size: 25px;
+}
+
+.show-lower-half {
+/*  background-color: purple;*/
+}
+
+.show-lower-half-left {
+/*  background-color: orange;*/
+}
+
+.show-lower-half-right {
+/*  background-color: yellow;*/
 }
 
 .crawl-show-thumb {
-  margin-left: 75px;
-  margin-top: 25px;
+  margin-left: -5px;
+  margin-top: 50px;
   border-radius: 5px;
   box-shadow: 5px 5px 2.5px #888888;
+  margin-bottom: 25px;
 }
 
-.crawl-show-restaurant {
-  margin-top: -47.5px;
-  margin-left: 200px;
+.crawl-show-restaurant-info {
   color: rgba(0, 0, 0, .5);
+  margin-top: -6px;
+  margin-left: 125px;
+}
+
+.crawl-show-restaurant-group {
+  margin-top: -120px;
 }
 
 .crawl-show-thumb:hover {
   opacity: 0.75;
 }
 
-.crawl-show-description {
-  margin-top: -77.5px;
-  margin-left: 650px;
-  font-size: 25px;
+.google-map {
+  width: 400px;
+  height: 400px;
+  background-color: lightgrey;
+  border-radius: 5px;
+  margin-top: 45px;
+  margin-left: 60px;
+  box-shadow: 5px 5px 2.5px #888888;
 }
 
-.crawl-list-index {
+/*.crawl-list-index {
   border: black solid 1px;
   padding: 20px;
 }
+*/
+
 
 
 
