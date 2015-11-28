@@ -1,16 +1,33 @@
 
-![We crawl for FOOD](https://slack-files.com/files-pri-safe/T0351JZQ0-F0F2NAW9M/restfulcrawllogo.svg?c=1448300973-e6b764d751a2588336422c781d575f43d2c118e0)
+![[We crawl for FOOD][https://thawing-badlands-4075.herokuapp.com/]](https://i.imgur.com/caEldRa.png)
 
-__Web app:__ [Click here](https://thawing-badlands-4075.herokuapp.com/)
+* __Web App:__ [Click here](https://thawing-badlands-4075.herokuapp.com/)
 
-__Presentation:__        [Click here](http://goo.gl/kQ1zjY) 
+* __KickStarter presentation:__        [Click here](http://goo.gl/kQ1zjY) 
 
-__Wireframe link:__      [Click here](https://goo.gl/xe65Ov)
+* __Wireframe link:__      [Click here](https://goo.gl/xe65Ov)
 
 ---
+#### Our commitment to our users:
 
-##Product description:
->A **simple**, **interactive**, **user-friendly** web app that will let You to create or join local food crawls.
+(our mission)At RESTful Crawl Inc, Our mission is to help You create, organize, and plan food crawls so your closest friends, or caring strangers, can join You on exploring unnique and tastful restaurants in your area.
+
+(who we are)We are a startup company, located in Los Angeles - CA devoted to serving: the young, the innovative, the tech lovers, the non-drinkers and the food lovers!
+
+(our commitme)
+
+
+> With a simply log
+
+
+
+####Vision:
+- 
+
+#### What does our Web app do?
+RESTful Crawl is an **interactive** and **user-friendly** web app that will let you create or join food crawls near your.
+
+
 
 -----
 

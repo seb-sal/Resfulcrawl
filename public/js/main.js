@@ -12,7 +12,7 @@ var showCrawl = function(crawlId) {
       // template the crawl show page
       var showCrawlTemplate = _.template($('#showTemplate').html());
       var $showHTML = $(showCrawlTemplate({crawl: data}));
-      console.log($showHTML);
+      console.log(data);
 
       // swap out the page's content
       $mainContent.fadeOut(1000, function() {
@@ -55,26 +55,17 @@ $(document).ready(function () {
 });
 
 
+
+
+
+
 var map;
-var currentLocation;
 function initMap() {
- if(navigator.geolocation) {
-   browserSupportFlag = true;
-   navigator.geolocation.getCurrentPosition(function(position) {
-     map = new google.maps.Map(document.getElementById('map'), {
-       center: {lat: position.coords.latitude, lng: position.coords.longitude},
-       zoom: 14
-     });
-     currentLocation = new google.maps.Marker({
-       position: {lat: position.coords.latitude, lng: position.coords.longitude},
-       map: map,
-       title: 'Hello World!'
- });
-
-   })
- }
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 34.0500, lng: -118.2500},
+    zoom: 8
+  });
 }
-
 
 
 
