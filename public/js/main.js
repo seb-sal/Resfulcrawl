@@ -8,7 +8,7 @@ var showCrawl = function(crawlId) {
   // get the crawl's JSON
   $.get("/crawls/" + crawlId)
     .success(function(data) {
-      console.log(data);
+
       // template the crawl show page
       var showCrawlTemplate = _.template($('#showTemplate').html());
       var $showHTML = $(showCrawlTemplate({crawl: data}));
@@ -46,7 +46,6 @@ $(document).ready(function () {
 
   // get all crawls and render on index
   $.get('/crawls', function(crawls) {
-    console.log(crawls);
 
     crawls.forEach(function(crawl) {
       var crawlHTML = renderCrawl(crawl);

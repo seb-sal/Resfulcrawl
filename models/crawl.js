@@ -5,7 +5,7 @@ var crawlSchema = new mongoose.Schema({
   date_of_crawl: Date,
   description: String,
   members: Array,
-  user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  creator: String,
   locations: [
     {
       start: String,

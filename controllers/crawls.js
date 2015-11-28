@@ -1,4 +1,5 @@
 var Crawl = require("../models/crawl");
+var User = require("../models/user");
 
 var index = function(req, res, next) {
   Crawl.find({}, function(error, crawls) {
@@ -8,13 +9,17 @@ var index = function(req, res, next) {
 
 var show = function(req, res, next) {
   Crawl.findById(req.params.id, function(error, crawl){
+
     res.json(crawl);
   });
 };
 
 var create = function(req, res) {
-  console.log(req.body.locations);
-  Crawl.create(req.body, function(err, crawl) {
+  var newCrawl = req.body;
+  newCrawl.creator = req.user._id;
+
+  Crawl.create(newCrawl, function(err, crawl) {
+    console.log(crawl);
     if(err) {
       res.send(err);
     }
