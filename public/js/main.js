@@ -4,20 +4,22 @@ var $mainContent;
 
 var users;
 
+
 var showCrawl = function(crawlId) {
   // get the clicked crawl's id
   var $showbody = $('#showbody');
-  // get the crawl's JSON
-
 
   $.get("/crawls/" + crawlId)
-    .success(function(data) {
-      console.log(data);
+    .success(function(crawl) {
+      console.log(crawl.creator);
 
+    $.get("/users/" + crawl.creator)
+      .success(function(user) {
+      console.log(user);
 
       // template the crawl show page
       var showCrawlTemplate = _.template($('#showTemplate').html());
-      var $showHTML = $(showCrawlTemplate({crawl: data}, {users: users}));
+      var $showHTML = $(showCrawlTemplate({crawl: crawl, user: user}));
       console.log($showHTML);
 
       // swap out the page's content
@@ -28,6 +30,7 @@ var showCrawl = function(crawlId) {
 
       });
     });
+  });
 
 };
 
