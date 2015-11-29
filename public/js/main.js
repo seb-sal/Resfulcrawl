@@ -34,6 +34,13 @@ var showCrawl = function(crawlId) {
 
         $showbody.append($showHTML);
 
+        $('.delete-button').on('click', function(event) {
+          console.log(crawlId);
+          deleteCrawl(crawlId);
+          $mainContent.fadeIn(1000);
+          location.reload(true);
+        })
+
         $showbody.fadeIn(1000, function(){});
 
       });
