@@ -16,14 +16,12 @@ var showCrawl = function(crawlId) {
   $.get("/crawls/" + crawlId)
     .success(function(crawl) {
 
-
-
       // template the crawl show page
       var showCrawlTemplate = _.template($('#showTemplate').html());
 
       var $showHTML = $(showCrawlTemplate({crawl: crawl, current: $currentUser}));
 
-      data.locations.forEach(function (e) {
+      crawl.locations.forEach(function (e) {
         addresses.push(e.address);
       });
 
