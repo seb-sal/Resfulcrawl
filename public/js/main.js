@@ -2,16 +2,22 @@ console.log('JS loaded!');
 
 var $mainContent;
 
+var users;
+
 var showCrawl = function(crawlId) {
   // get the clicked crawl's id
   var $showbody = $('#showbody');
   // get the crawl's JSON
+
+
   $.get("/crawls/" + crawlId)
     .success(function(data) {
+      console.log(data);
+
 
       // template the crawl show page
       var showCrawlTemplate = _.template($('#showTemplate').html());
-      var $showHTML = $(showCrawlTemplate({crawl: data}));
+      var $showHTML = $(showCrawlTemplate({crawl: data}, {users: users}));
       console.log($showHTML);
 
       // swap out the page's content
@@ -22,6 +28,7 @@ var showCrawl = function(crawlId) {
 
       });
     });
+
 };
 
 $(document).ready(function () {

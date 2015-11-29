@@ -4,6 +4,7 @@ var express = require('express'),
 // Require controllers.
 var welcomeController = require('../controllers/welcome');
 var crawlsController  = require('../controllers/crawls');
+var usersController = require('../controllers/users');
 var yelpController    = require('../controllers/yelp');
 
 
@@ -27,7 +28,7 @@ module.exports = function(app, passport) {
   // welcome/root path
   router.get('/', welcomeController.index);
 
-
+  router.get('/users/:id', usersController.show);
   // crawls resources
   router.get('/crawls',     crawlsController.index);
   router.get('/crawls/:id', crawlsController.show);
