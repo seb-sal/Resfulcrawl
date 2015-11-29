@@ -4,28 +4,44 @@ var $mainContent;
 var map;
 var addresses=[];
 
+var $currentUser = $('.nav-bar-welcome').attr('data-id');
+console.log($currentUser);
+
+
+
 var showCrawl = function(crawlId) {
   // get the clicked crawl's id
   var $showbody = $('#showbody');
-  // get the crawl's JSON
+
   $.get("/crawls/" + crawlId)
-    .success(function(data) {
+    .success(function(crawl) {
+
+
 
       // template the crawl show page
       var showCrawlTemplate = _.template($('#showTemplate').html());
-      var $showHTML = $(showCrawlTemplate({crawl: data}));
+
+      var $showHTML = $(showCrawlTemplate({crawl: crawl, current: $currentUser}));
+
       data.locations.forEach(function (e) {
         addresses.push(e.address);
-      })
-        console.log(addresses);
+      });
+
+      console.log(addresses);
+      console.log($showHTML);
+
+
       // swap out the page's content
       $mainContent.fadeOut(1000, function() {
 
         $showbody.append($showHTML);
+
         $showbody.fadeIn(1000, function(){});
 
       });
-    });
+
+  });
+
 };
 
 $(document).ready(function () {
@@ -33,8 +49,9 @@ $(document).ready(function () {
   var $crawlDetail = $('.crawl-detail');
 
   // compile all templates
-
   var crawlDetailTemplate = _.template($('#crawlDetailTemplate').html());
+
+
 
   // render a crawl by templating it and adding a click event
   var renderCrawl = function(crawl) {
