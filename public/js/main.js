@@ -3,8 +3,6 @@ console.log('JS loaded!');
 var $mainContent;
 var map;
 var addresses=[];
-var geocoder;
-var markersArray = [];
 
 var showCrawl = function(crawlId) {
   // get the clicked crawl's id
