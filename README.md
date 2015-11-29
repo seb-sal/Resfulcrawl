@@ -8,8 +8,17 @@
 * __Wireframe link:__      [Click here](https://goo.gl/xe65Ov)
 
 ---
-#### Our mission:
-> At RESTful Crawl Inc, our mission is to offer the simpliest 
+#### Our commitment to our users:
+
+(our mission)At RESTful Crawl Inc, Our mission is to help You create, organize, and plan food crawls so your closest friends, or caring strangers, can join You on exploring unnique and tastful restaurants in your area.
+
+(who we are)We are a startup company, located in Los Angeles - CA devoted to serving: the young, the innovative, the tech lovers, the non-drinkers and the food lovers!
+
+(our commitme)
+
+
+> With a simply log
+
 
 
 ####Vision:
