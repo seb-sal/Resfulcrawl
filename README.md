@@ -60,8 +60,8 @@ Behind every successful project there are countless hours dedicated towards plan
 
 ###Installations
 
-####npm install package dependancies:
-- If you want to clone an run the website locally. Below is snippet of our package.json 
+####install package dependancies:
+- Below is a snippet of our package.json so you can npm install all package dependancies in case you want to clone and run the website locally.
 
 ```
 {
