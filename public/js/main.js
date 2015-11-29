@@ -4,28 +4,49 @@ var $mainContent;
 var map;
 var addresses=[];
 
+var $currentUser = $('.nav-bar-welcome').attr('data-id');
+console.log($currentUser);
+
+
+
 var showCrawl = function(crawlId) {
   // get the clicked crawl's id
   var $showbody = $('#showbody');
-  // get the crawl's JSON
+
   $.get("/crawls/" + crawlId)
-    .success(function(data) {
+    .success(function(crawl) {
 
       // template the crawl show page
       var showCrawlTemplate = _.template($('#showTemplate').html());
-      var $showHTML = $(showCrawlTemplate({crawl: data}));
-      data.locations.forEach(function (e) {
+
+      var $showHTML = $(showCrawlTemplate({crawl: crawl, current: $currentUser}));
+
+      crawl.locations.forEach(function (e) {
         addresses.push(e.address);
-      })
-        console.log(addresses);
+      });
+
+      console.log(addresses);
+      console.log($showHTML);
+
+
       // swap out the page's content
       $mainContent.fadeOut(1000, function() {
 
         $showbody.append($showHTML);
+
+        $('.delete-button').on('click', function(event) {
+          console.log(crawlId);
+          deleteCrawl(crawlId);
+          $mainContent.fadeIn(1000);
+          location.reload(true);
+        })
+
         $showbody.fadeIn(1000, function(){});
 
       });
-    });
+
+  });
+
 };
 
 $(document).ready(function () {
@@ -33,8 +54,9 @@ $(document).ready(function () {
   var $crawlDetail = $('.crawl-detail');
 
   // compile all templates
-
   var crawlDetailTemplate = _.template($('#crawlDetailTemplate').html());
+
+
 
   // render a crawl by templating it and adding a click event
   var renderCrawl = function(crawl) {
@@ -51,10 +73,12 @@ $(document).ready(function () {
 
     crawls.forEach(function(crawl) {
       var crawlHTML = renderCrawl(crawl);
-      $crawlDetail.append(crawlHTML);
+      $crawlDetail.prepend(crawlHTML);
     });
   });
-});
+
+
+});  // document ready
 
 
 // function makes ajax call to acquire lat, lng by addresses, then place markers for all addresses, then extend map bound to include all markers
@@ -95,4 +119,10 @@ function initMap() {
       }); //getJSON
   } //for loop
 
+<<<<<<< HEAD
 }
+=======
+} // initMap
+
+
+>>>>>>> 1443498e5b6f027e1486863f8c69a4ea2814f307

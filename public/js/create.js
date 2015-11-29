@@ -16,7 +16,6 @@ $(document).ready(function (){
     var restName = $parent.find('a').html();
     var restAddress = $parent.find('p').eq(1).html();
     restAddress = restAddress.replace(/<br>\\*/g, ' ');
-    console.log(restAddress);
     var restPhone = $parent.find('p').eq(2).html();
     var restURL = $parent.find('a').attr('href');
 
