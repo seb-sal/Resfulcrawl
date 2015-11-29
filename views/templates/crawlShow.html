@@ -1,55 +1,108 @@
 
+<$ if (!user) { $>
 
+  <script type="text/template" id="showTemplate">
+    <%= console.log(current) %>
+        <div class="container show-upper-half">
+
+          <div class="col-xs-6 show-upper-half-left">
+            <p class="crawl-show-title"> <%= crawl.title %> </p><br>
+          </div>
+
+          <div class="col-xs-6 show-upper-half-right">
+            <p class="crawl-show-description"> <%= crawl.description %> </p><br>
+          </div>
+
+      </div>
+      <div class="container show-lower-half">
+
+          <div class="col-xs-6 show-lower-half-left">
+            <div>
+            <% for (i=0; i < crawl.locations.length; i++) { %>
+              <a href="<%= crawl.locations[i].url %>"><img class="crawl-show-thumb" src="<%= crawl.locations[i].image_url %>"></a>
+            </div>
+            <div class="crawl-show-restaurant-group">
+              <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].name %> </p>
+              <p class="crawl-show-restaurant-info"> <%- crawl.locations[i].address %> </p>
+              <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].phone %> </p>
+              <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].start %> </p>
+              <ul>
+                 <li>
+
+                 </li>
+               </ul
+             <% } %>
+            </div>
+          </div>
+
+          <div class="col-xs-6 show-lower-half-right">
+            <div id="map">
+              <!-- google map div will go here -->
+            </div>
+            <div>
+             <ul>
+               <li>
+
+               </li>
+              </ul>
+            </div>
+          </div>
+  </script>
+
+<$ } else { $>
 
 <script type="text/template" id="showTemplate">
-<%= console.log(user) %>
-<%= console.log(crawl) %>
+  <%= console.log(current) %>
+      <div class="container show-upper-half">
 
-  <div class="container show-upper-half">
-
-      <div class="col-xs-6 show-upper-half-left">
-        <p class="crawl-show-title"> <%= crawl.title %> </p><br>
-      </div>
-
-      <div class="col-xs-6 show-upper-half-right">
-        <p class="crawl-show-description"> <%= crawl.description %> </p><br>
-      </div>
-
-  </div>
-  <div class="container show-lower-half">
-
-      <div class="col-xs-6 show-lower-half-left">
-        <div>
-        <% for (i=0; i < crawl.locations.length; i++) { %>
-          <a href="<%= crawl.locations[i].url %>"><img class="crawl-show-thumb" src="<%= crawl.locations[i].image_url %>"></a>
+        <div class="col-xs-6 show-upper-half-left">
+          <p class="crawl-show-title"> <%= crawl.title %> </p><br>
         </div>
-        <div class="crawl-show-restaurant-group">
-          <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].name %> </p>
-          <p class="crawl-show-restaurant-info"> <%- crawl.locations[i].address %> </p>
-          <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].phone %> </p>
-          <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].start %> </p>
-          <ul>
+
+        <div class="col-xs-6 show-upper-half-right">
+          <p class="crawl-show-description"> <%= crawl.description %> </p><br>
+        </div>
+
+    </div>
+    <div class="container show-lower-half">
+
+        <div class="col-xs-6 show-lower-half-left">
+          <div>
+          <% for (i=0; i < crawl.locations.length; i++) { %>
+            <a href="<%= crawl.locations[i].url %>"><img class="crawl-show-thumb" src="<%= crawl.locations[i].image_url %>"></a>
+          </div>
+          <div class="crawl-show-restaurant-group">
+            <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].name %> </p>
+            <p class="crawl-show-restaurant-info"> <%- crawl.locations[i].address %> </p>
+            <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].phone %> </p>
+            <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].start %> </p>
+            <ul>
+               <li>
+                <% if(current == crawl.creator) { %>
+                 <span class="btn btn-info btn-xs edit save-edit">Update</span>
+                <% } %>
+               </li>
+             </ul
+           <% } %>
+          </div>
+        </div>
+
+        <div class="col-xs-6 show-lower-half-right">
+          <div id="map">
+            <!-- google map div will go here -->
+          </div>
+          <div>
+           <ul>
              <li>
-               <span class="btn btn-info btn-xs edit save-edit">Update</span>
+              <% if(current == crawl.creator) { %>
+                <span class="btn btn-danger btn-md edit delete-crawl">Delete</span>
+              <% } else { %>
+                <span class="btn btn-warning btn-md edit save-edit">RSVP</span>
+              <% } %>
              </li>
-           </ul
-         <% } %>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <div class="col-xs-6 show-lower-half-right">
-        <div id="map">
-          <!-- google map div will go here -->
-        </div>
-        <div>
-         <ul>
-           <li>
-             <span class="btn btn-warning btn-md edit save-edit">RSVP</span>
-             <span class="btn btn-danger btn-md edit delete-crawl">Delete</span>
-           </li>
-          </ul>
-        </div>
-      </div>
 </script>
 
-
+<$ } $>
