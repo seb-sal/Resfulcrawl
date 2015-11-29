@@ -19,7 +19,6 @@ var create = function(req, res) {
   newCrawl.creator = req.user._id;
 
   Crawl.create(newCrawl, function(err, crawl) {
-    console.log(crawl);
     if(err) {
       res.send(err);
     }
@@ -27,18 +26,40 @@ var create = function(req, res) {
   });
 }
 
-//findByName
-// var search = function(req, res, next) {
-//   console.log("hi");
-//   Crawl.findByName(req.params.title, function(error, crawl){
-//     res.json(crawl);
-//   });
-// };
+// findByName
+var search = function(req, res, next) {
+  console.log(req.params.name);
+  Crawl.findOne({ "crawls.title": req.params.name}),function(error, crawl){
+    if (error) { console.log(error); }
+    res.json(crawl);
+  };
+};
 
+var destroy = function(req, res) {
+  Crawl.findByIdAndRemove(req.params.id, function(err, record){
+    if(err){
+      res.send(err);
+    };
+    res.send(record.title + " has been deleted!");
+  });
+};
+
+
+var update = function(req, res) {
+console.log(req);
+  Crawl.findByIdAndUpdate(req.params.id, req.body, {new:true}, function(err, record){
+    if(err) {
+      res.send(err);
+    };
+    res.send(record);
+  });
+};
 
 module.exports = {
   index: index,
   show: show,
-  // search: search,
-  create: create
+  search: search,
+  create: create,
+  destroy: destroy,
+  update: update
 };

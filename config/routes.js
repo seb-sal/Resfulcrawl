@@ -36,7 +36,10 @@ module.exports = function(app, passport) {
   router.get('/crawls',     crawlsController.index);
   router.get('/crawls/:id', crawlsController.show);
   router.post('/crawls', crawlsController.create);
-  // router.get('/crawls/search/', crawlsController.search);
+  router.get('/crawls/search/:name', crawlsController.search);
+  router.delete('/crawls/:id', crawlsController.destroy);
+  router.put('/crawls/:id',    crawlsController.update);
+
 
   // yelp api implmentation
   router.get('/venues', isAuthenticated, yelpController.index);
