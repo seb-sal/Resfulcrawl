@@ -119,7 +119,7 @@ Below is a list of the current actions (also known as user stories, behaviors or
 
 
 
-### Icebook:
+### Icebox:
 
 Below is a list of the nice-to-have features (created as user stories) that we will have for our second version:
 
@@ -185,7 +185,7 @@ Error padding | 16 hours
   
 ```
 mongoimport -h ds012345.mongolab.com:56789 -d dbname -c collectionname -u dbuser -p dbpassword --file filename.json
-``
+```
 
 
 #### Heroku:
@@ -212,7 +212,9 @@ mongoimport -h ds012345.mongolab.com:56789 -d dbname -c collectionname -u dbuser
 ---
 ---
 
+
 ### Technologies used
+
 
 Communication | Collaboration | Design | Development | APIs | Deployment
 ------------|------|-------------------
@@ -266,6 +268,7 @@ end: "1970-01-01T00:00:01.400Z",
 name: "Yuzu Shabu",
 _id:""5655f85f88b262c6c31b5c9d",
 ]`
+
 
 ### Fields:
 
