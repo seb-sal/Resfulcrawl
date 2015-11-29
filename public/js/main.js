@@ -4,7 +4,7 @@ var $mainContent;
 
 var $currentUser = $('.nav-bar-welcome').attr('data-id');
 console.log($currentUser);
-// var users;
+
 
 
 var showCrawl = function(crawlId) {
@@ -14,11 +14,7 @@ var showCrawl = function(crawlId) {
   $.get("/crawls/" + crawlId)
     .success(function(crawl) {
 
-      //after getting crawl also getting the specific user in order to
-      //have access to that info insde the template to code logic
-      //of user access
-    // $.get("/users/" + crawl.creator)
-    //   .success(function(user) {
+
 
       // template the crawl show page
       var showCrawlTemplate = _.template($('#showTemplate').html());
@@ -29,10 +25,11 @@ var showCrawl = function(crawlId) {
       $mainContent.fadeOut(1000, function() {
 
         $showbody.append($showHTML);
+
         $showbody.fadeIn(1000, function(){});
 
       });
-    // });
+
   });
 
 };
@@ -43,6 +40,8 @@ $(document).ready(function () {
 
   // compile all templates
   var crawlDetailTemplate = _.template($('#crawlDetailTemplate').html());
+
+
 
   // render a crawl by templating it and adding a click event
   var renderCrawl = function(crawl) {
