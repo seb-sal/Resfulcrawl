@@ -44,10 +44,20 @@ var search = function(req, res, next) {
 //   });
 // };
 
+var destroy = function(req, res) {
+  Crawl.findByIdAndRemove(req.params.id, function(err, record){
+    if(err){
+      res.send(err);
+    };
+    res.send(record.name + " has been deleted!");
+  });
+};
+
 
 module.exports = {
   index: index,
   show: show,
   search: search,
-  create: create
+  create: create,
+  destroy: destroy
 };
