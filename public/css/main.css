@@ -333,8 +333,8 @@ ol, ul {
 }
 
 #map {
-  width: 380px;
-  height: 380px;
+  width: 600px;
+  height: 480px;
   background-color: lightgrey;
   border-radius: 5px;
   margin-top: 67.5px;

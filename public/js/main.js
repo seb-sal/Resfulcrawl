@@ -72,6 +72,7 @@ function initMap() {
 
           var myOptions = {
               zoom: 1,
+              tilt: 45,
               center: data.results[0].geometry.location,
               mapTypeId: google.maps.MapTypeId.ROADMAP
           }
