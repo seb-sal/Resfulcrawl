@@ -34,15 +34,6 @@ var search = function(req, res, next) {
     res.json(crawl);
   };
 };
-// //Show one spot
-// var show = function(req, res, next) {
-//   User.findOne({"spots._id":req.params.id}).select('spots').exec(function(err, user){
-//     var spots = user.spots.filter(function(s){
-//       return s._id == req.params.id;
-//     });
-//     res.render('spots/show', {spot: spots[0]});
-//   });
-// };
 
 var destroy = function(req, res) {
   Crawl.findByIdAndRemove(req.params.id, function(err, record){
@@ -54,10 +45,21 @@ var destroy = function(req, res) {
 };
 
 
+var update = function(req, res) {
+console.log(req);
+  Crawl.findByIdAndUpdate(req.params.id, req.body, {new:true}, function(err, record){
+    if(err) {
+      res.send(err);
+    };
+    res.send(record);
+  });
+};
+
 module.exports = {
   index: index,
   show: show,
   search: search,
   create: create,
-  destroy: destroy
+  destroy: destroy,
+  update: update
 };
