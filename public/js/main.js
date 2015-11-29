@@ -59,6 +59,9 @@ $(document).ready(function () {
 
 // function makes ajax call to acquire lat, lng by addresses, then place markers for all addresses, then extend map bound to include all markers
 function initMap() {
+  //Marker labeling implmentation
+  var labels = '123456789';
+  var labelIndex = 0;
 
   var bounds = new google.maps.LatLngBounds();
   //ajax call to google api for geocoding
@@ -77,8 +80,11 @@ function initMap() {
           if (!map) map = new google.maps.Map(document.getElementById("map"), myOptions);
           var marker = new google.maps.Marker({
               position: latlng,
-              map: map
+              map: map,
+              animation: google.maps.Animation.DROP,
+              label: labels[labelIndex++ % labels.length]
           });
+
 
           //extend the bounds to include each marker's position
           bounds.extend(marker.position);
