@@ -49,7 +49,7 @@ var destroy = function(req, res) {
     if(err){
       res.send(err);
     };
-    res.send(record.name + " has been deleted!");
+    res.send(record.title + " has been deleted!");
   });
 };
 
