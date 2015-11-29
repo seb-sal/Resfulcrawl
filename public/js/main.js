@@ -51,10 +51,12 @@ $(document).ready(function () {
 
     crawls.forEach(function(crawl) {
       var crawlHTML = renderCrawl(crawl);
-      $crawlDetail.append(crawlHTML);
+      $crawlDetail.prepend(crawlHTML);
     });
   });
-});
+
+
+});  // document ready
 
 
 // function makes ajax call to acquire lat, lng by addresses, then place markers for all addresses, then extend map bound to include all markers
@@ -95,6 +97,6 @@ function initMap() {
       }); //getJSON
   } //for loop
 
-}
+} // initMap
 
 
