@@ -60,11 +60,10 @@ Behind every successful project there are countless hours dedicated towards plan
 
 ###Installations
 
-####install package dependancies:
-- Below is a snippet of our package.json so you can npm install all package dependancies in case you want to clone and run the website locally.
+####Package dependancies:
+- Below is a snippet of our package.json so you can npm install all package dependancies.
 
 ```
-{
   "dependencies": {
     "body-parser": "~1.13.2",
     "cookie-parser": "~1.3.5",
@@ -84,7 +83,7 @@ Behind every successful project there are countless hours dedicated towards plan
     "querystring": "^0.2.0",
     "request": "^2.67.0",
     "serve-favicon": "~2.3.0"
-}
+    }
 ```
 
 ####MongoLab:
@@ -109,29 +108,30 @@ mongoimport -h ds012345.mongolab.com:56789 -d dbname -c collectionname -u dbuser
   - [Yelp API](https://www.yelp.com/developers/documentation/v2/overview)
   
 
-####Google API:  
+####Google OAuth API:  
 - Google API is used for OAuth and mapping.  **API key for Google is required**, check the Google API documentation for obtaining a key:
-  - [Google API](https://www.yelp.com/developers/documentation/v2/overview)
+  - [Google API](https://developers.google.com/identity/)
+
+####Google Maps API:  
   
-- GeoName API allows the app to search by zipcode.  **An account and API key for GeoName is required**, check the GeoName API documentation for obtaining a key:
-  - [GeoNames API](http://www.geonames.org/export/web-services.html)
+- Google Maps API will display the restaurant location.  **An account and API key for Google Maps is required**, check the Google API documentation for obtaining a key:
+  - [Google Maps API](https://developers.google.com/maps/documentation/javascript/)
 
 ---
 ---
 
 ###Technologies Used
 
-Development | APIs | Deployment
+Planning & Organizing | Design | Development | APIs | Deployment
 ------------|------|-------------------
-HTML| Google | Heroku
-CSS | Flickr | MongoLab
-Bootstrap | GeoNames |
-JavaScript/jQuery |
-Node.js |
-Express |
-MongoDB |
-Git |
-GitHub |
+ Trello | Moqups | HTML| Google | Heroku
+ LucidChart| LucidChart | CSS | Flickr | MongoLab
+ | | Bootstrap | GeoNames |
+ | | JavaScript/jQuery |
+ | | Node.js |
+ | | Express |
+ | | MongoDB |
+ | | GitHub |
 
 
 ##Goals Version no.1
