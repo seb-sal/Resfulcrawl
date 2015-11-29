@@ -1,27 +1,45 @@
 console.log('JS loaded!');
 
 var $mainContent;
+var map;
+var addresses=[];
+
+var $currentUser = $('.nav-bar-welcome').attr('data-id');
+console.log($currentUser);
+
+
 
 var showCrawl = function(crawlId) {
   // get the clicked crawl's id
   var $showbody = $('#showbody');
-  // get the crawl's JSON
+
   $.get("/crawls/" + crawlId)
-    .success(function(data) {
+    .success(function(crawl) {
 
       // template the crawl show page
       var showCrawlTemplate = _.template($('#showTemplate').html());
-      var $showHTML = $(showCrawlTemplate({crawl: data}));
+
+      var $showHTML = $(showCrawlTemplate({crawl: crawl, current: $currentUser}));
+
+      crawl.locations.forEach(function (e) {
+        addresses.push(e.address);
+      });
+
+      console.log(addresses);
       console.log($showHTML);
+
 
       // swap out the page's content
       $mainContent.fadeOut(1000, function() {
 
         $showbody.append($showHTML);
+
         $showbody.fadeIn(1000, function(){});
 
       });
-    });
+
+  });
+
 };
 
 $(document).ready(function () {
@@ -29,16 +47,15 @@ $(document).ready(function () {
   var $crawlDetail = $('.crawl-detail');
 
   // compile all templates
-
   var crawlDetailTemplate = _.template($('#crawlDetailTemplate').html());
+
+
 
   // render a crawl by templating it and adding a click event
   var renderCrawl = function(crawl) {
     var $crawlHTML = $(crawlDetailTemplate({crawl: crawl}));
     $crawlHTML.on('click', function(e) {
-      console.log(e.target);
       var crawlId = $(e.target).parent().data('id');
-      console.log(crawlId);
       showCrawl(crawlId);
     });
     return $crawlHTML;
@@ -49,15 +66,52 @@ $(document).ready(function () {
 
     crawls.forEach(function(crawl) {
       var crawlHTML = renderCrawl(crawl);
-      $crawlDetail.append(crawlHTML);
+      $crawlDetail.prepend(crawlHTML);
     });
   });
-});
 
-var map;
+
+});  // document ready
+
+
+// function makes ajax call to acquire lat, lng by addresses, then place markers for all addresses, then extend map bound to include all markers
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 34.0500, lng: 118.2500},
-    zoom: 8
-  });
-}
+  //Marker labeling implmentation
+  var labels = '123456789';
+  var labelIndex = 0;
+
+  var bounds = new google.maps.LatLngBounds();
+  //ajax call to google api for geocoding
+  for (var x = 0; x < addresses.length; x++) {
+      $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
+          var p = data.results[0].geometry.location;
+          var latlng = new google.maps.LatLng(p.lat, p.lng);
+
+          var myOptions = {
+              zoom: 1,
+              tilt: 45,
+              center: data.results[0].geometry.location,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+          }
+
+          //initialize map if map is null
+          if (!map) map = new google.maps.Map(document.getElementById("map"), myOptions);
+          var marker = new google.maps.Marker({
+              position: latlng,
+              map: map,
+              animation: google.maps.Animation.DROP,
+              label: labels[labelIndex++ % labels.length]
+          });
+
+
+          //extend the bounds to include each marker's position
+          bounds.extend(marker.position);
+
+          //now fit the map to the newly inclusive bounds
+          map.fitBounds(bounds);
+      }); //getJSON
+  } //for loop
+
+} // initMap
+
+

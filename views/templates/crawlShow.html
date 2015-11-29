@@ -1,56 +1,116 @@
+
+<$ if (!user) { $>
+
 <script type="text/template" id="showTemplate">
 
-  <div class="container show-upper-half">
+  <%= console.log(current) %>
+      <div class="container show-upper-half">
 
-      <div class="col-xs-6 show-upper-half-left">
-        <p class="crawl-show-title"> <%= crawl.title %> </p><br>
-      </div>
+        <div class="col-xs-6 show-upper-half-left">
+          <p class="crawl-show-title"> <%= crawl.title %> </p><br>
+        </div>
 
-      <div class="col-xs-6 show-upper-half-right">
-        <p class="crawl-show-description"> <%= crawl.description %> </p><br>
-      </div>
+        <div class="col-xs-6 show-upper-half-right">
+          <h2><%= crawl.date_of_crawl.substring(0,10) %></h2>
+          <p class="crawl-show-description"> <%= crawl.description %> </p><br>
+        </div>
 
-  </div>
+    </div>
+    <div class="container show-lower-half">
 
-  <div class="container show-lower-half">
-
-      <div class="col-xs-6 show-lower-half-left">
+      <div class="col-xs-5 show-lower-half-left">
         <div>
         <% for (i=0; i < crawl.locations.length; i++) { %>
           <a href="<%= crawl.locations[i].url %>"><img class="crawl-show-thumb" src="<%= crawl.locations[i].image_url %>"></a>
         </div>
+        <div>
+
+        </div>
         <div class="crawl-show-restaurant-group">
-          <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].name %> </p>
-          <p class="crawl-show-restaurant-info"> <%- crawl.locations[i].address %> </p>
-          <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].phone %> </p>
-          <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].start %> </p>
-          <ul>
-             <li>
-               <span class="btn btn-info btn-xs edit save-edit">Update</span>
-             </li>
-           </ul
-         <% } %>
-        </div>
-         <div>
-         <ul>
-           <li>
-             <span class="btn btn-warning btn-md edit save-edit">RSVP</span>
-             <span class="btn btn-danger btn-md edit delete-crawl">Delete</span>
-           </li>
-          </ul>
+          <p class="crawl-show-restaurant-info"> <%= (i+1) + ". " + crawl.locations[i].name %> </p>
+          <p class="crawl-show-restaurant-info">Address: <%- crawl.locations[i].address %> </p>
+          <p class="crawl-show-restaurant-info">Phone: <%= crawl.locations[i].phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3') %> </p>
+          <p class="crawl-show-restaurant-info">Start Time: <%= crawl.locations[i].start.substring(0, 2) + ':' + crawl.locations[i].start.substring(crawl.locations[i].start.length-2)%> </p>
+        <% } %>
+
         </div>
       </div>
 
-      <div class="col-xs-6 show-lower-half-right">
-        <div id="map">
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMQPMJeW4oeP0r22mFVGvq-BnAaGqXvoU&callback=initMap"
-            async defer></script>
+      <div class="col-xs-7 show-lower-half-right">
+            <div id="map">
+            </div>
+              <div class="container">
+                <div class="rsvp-delete-group">
 
-        </div>
-
-
+                </div>
+                <div>
+                </div>
+              </div>
+          </div>
       </div>
 
-</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMQPMJeW4oeP0r22mFVGvq-BnAaGqXvoU&signed_in=true&callback=initMap"></script>
+
+
+<$ } else { $>
+
+
+<script type="text/template" id="showTemplate">
+
+  <%= console.log(current) %>
+      <div class="container show-upper-half">
+
+        <div class="col-xs-6 show-upper-half-left">
+          <p class="crawl-show-title"> <%= crawl.title %> </p><br>
+        </div>
+
+        <div class="col-xs-6 show-upper-half-right">
+          <h2><%= crawl.date_of_crawl.substring(0,10) %></h2>
+          <p class="crawl-show-description"> <%= crawl.description %> </p><br>
+        </div>
+
+    </div>
+    <div class="container show-lower-half">
+
+      <div class="col-xs-5 show-lower-half-left">
+        <div>
+        <% for (i=0; i < crawl.locations.length; i++) { %>
+          <a href="<%= crawl.locations[i].url %>"><img class="crawl-show-thumb" src="<%= crawl.locations[i].image_url %>"></a>
+        </div>
+        <% if(current == crawl.creator) { %>
+          <div>
+            <button type="submit" id= "editCrawl" class="btn btn-info btn-xs edit-button">edit</button>
+          </div>
+        <% } %>
+        <div class="crawl-show-restaurant-group">
+          <p class="crawl-show-restaurant-info"> <%= (i+1) + ". " + crawl.locations[i].name %> </p>
+          <p class="crawl-show-restaurant-info">Address: <%- crawl.locations[i].address %> </p>
+          <p class="crawl-show-restaurant-info">Phone: <%= crawl.locations[i].phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3') %> </p>
+          <p class="crawl-show-restaurant-info">Start Time: <%= crawl.locations[i].start.substring(0, 2) + ':' + crawl.locations[i].start.substring(crawl.locations[i].start.length-2)%> </p>
+        <% } %>
+
+        </div>
+      </div>
+
+      <div class="col-xs-7 show-lower-half-right">
+            <div id="map">
+            </div>
+              <div class="container">
+                <div class="rsvp-delete-group">
+                    <% if(current == crawl.creator) { %>
+                  <button type="submit" class="btn btn-danger btn-md delete-button">Delete</button>
+                    <% } else { %>
+                  <button id="rsvp" type="submit" class="btn btn-warning btn-md rsvp-button">RSVP</button>
+                    <% } %>
+                </div>
+                <div>
+                </div>
+              </div>
+          </div>
+      </div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMQPMJeW4oeP0r22mFVGvq-BnAaGqXvoU&signed_in=true&callback=initMap"></script>
+
+<$ } $>
 
 

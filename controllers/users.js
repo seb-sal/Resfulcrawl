@@ -9,7 +9,7 @@ var User = require("../models/user");
 // }
 
 var show = function(req, res, next) {
-  User.findById(req.params.id, function(error, user){
+    User.findById(req.params.id, function(error, user){
     res.json(user);
   });
 };
