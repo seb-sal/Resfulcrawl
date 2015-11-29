@@ -7,6 +7,7 @@
       </div>
 
       <div class="col-xs-6 show-upper-half-right">
+        <h2><%= crawl.date_of_crawl.substring(0,10) %></h2>
         <p class="crawl-show-description"> <%= crawl.description %> </p><br>
       </div>
 
@@ -14,7 +15,7 @@
 
   <div class="container show-lower-half">
 
-      <div class="col-xs-4 show-lower-half-left">
+      <div class="col-xs-5 show-lower-half-left">
         <div>
         <% for (i=0; i < crawl.locations.length; i++) { %>
           <a href="<%= crawl.locations[i].url %>"><img class="crawl-show-thumb" src="<%= crawl.locations[i].image_url %>"></a>
@@ -23,15 +24,15 @@
           <button type="submit" id= "editCrawl" class="btn btn-info btn-xs edit-button">edit</button>
         </div>
         <div class="crawl-show-restaurant-group">
-          <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].name %> </p>
-          <p class="crawl-show-restaurant-info"> <%- crawl.locations[i].address %> </p>
-          <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].phone %> </p>
-          <p class="crawl-show-restaurant-info"> <%= crawl.locations[i].start %> </p>
+          <p class="crawl-show-restaurant-info"> <%= (i+1) + ". " + crawl.locations[i].name %> </p>
+          <p class="crawl-show-restaurant-info">Address: <%- crawl.locations[i].address %> </p>
+          <p class="crawl-show-restaurant-info">Phone: <%= crawl.locations[i].phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3') %> </p>
+          <p class="crawl-show-restaurant-info">Start Time: <%= crawl.locations[i].start.substring(0, 2) + ':' + crawl.locations[i].start.substring(crawl.locations[i].start.length-2)%> </p>
         <% } %>
         </div>
       </div>
 
-      <div class="col-xs-8 show-lower-half-right">
+      <div class="col-xs-7 show-lower-half-right">
         <div id="map">
         </div>
           <div class="container">
