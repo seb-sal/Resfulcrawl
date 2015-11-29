@@ -277,10 +277,10 @@ ol, ul {
   font-size: 25px;
 }
 
-/*.show-lower-half {
-  background-color: purple;*/
+.show-lower-half {
+/*  background-color: purple;*/
   width: 965px;
-  height: 550px;
+  height: 625px;
 }
 
 .show-lower-half-left {
@@ -290,14 +290,25 @@ ol, ul {
 
 .show-lower-half-right {
 /*  background-color: yellow;*/
+  height: 625px;
+}
+
+.delete-button,
+.rsvp-button {
+  width: 75px;
+}
+
+.rsvp-delete-group {
+  margin-top: 25px;
+  margin-left: 65px;
 }
 
 .crawl-show-thumb {
   margin-left: -5px;
-  margin-top: 57.5px;
+  margin-top: 62.5px;
   border-radius: 5px;
   box-shadow: 5px 5px 2.5px #888888;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .crawl-show-restaurant-info {
@@ -307,11 +318,18 @@ ol, ul {
 }
 
 .crawl-show-restaurant-group {
-  margin-top: -120px;
+  margin-top: -150px;
 }
 
 .crawl-show-thumb:hover {
   opacity: 0.75;
+}
+
+.edit-button {
+  margin-top: -14px;
+  margin-left: -5px;
+  margin-bottom: 5px;
+  box-shadow: 1.5px 1.5px 1px #888888;
 }
 
 #map {
@@ -319,7 +337,7 @@ ol, ul {
   height: 380px;
   background-color: lightgrey;
   border-radius: 5px;
-  margin-top: 52.5px;
+  margin-top: 67.5px;
   margin-left: 80px;
   box-shadow: 5px 5px 2.5px #888888;
 }
