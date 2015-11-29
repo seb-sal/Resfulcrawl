@@ -2,6 +2,9 @@ console.log('JS loaded!');
 
 var $mainContent;
 var map;
+var addresses=[];
+var geocoder;
+var markersArray = [];
 
 var showCrawl = function(crawlId) {
   // get the clicked crawl's id
@@ -13,8 +16,10 @@ var showCrawl = function(crawlId) {
       // template the crawl show page
       var showCrawlTemplate = _.template($('#showTemplate').html());
       var $showHTML = $(showCrawlTemplate({crawl: data}));
-      console.log($showHTML);
-
+      data.locations.forEach(function (e) {
+        addresses.push(e.address);
+      })
+        console.log(addresses);
       // swap out the page's content
       $mainContent.fadeOut(1000, function() {
 
@@ -37,9 +42,7 @@ $(document).ready(function () {
   var renderCrawl = function(crawl) {
     var $crawlHTML = $(crawlDetailTemplate({crawl: crawl}));
     $crawlHTML.on('click', function(e) {
-      console.log(e.target);
       var crawlId = $(e.target).parent().data('id');
-      console.log(crawlId);
       showCrawl(crawlId);
     });
     return $crawlHTML;
@@ -55,11 +58,38 @@ $(document).ready(function () {
   });
 });
 
-var map;
+
+// function makes ajax call to acquire lat, lng by addresses, then place markers for all addresses, then extend map bound to include all markers
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 34.0500, lng: 118.2500},
-    zoom: 8
-  });
+
+  var bounds = new google.maps.LatLngBounds();
+  //ajax call to google api for geocoding
+  for (var x = 0; x < addresses.length; x++) {
+      $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
+          var p = data.results[0].geometry.location;
+          var latlng = new google.maps.LatLng(p.lat, p.lng);
+
+          var myOptions = {
+              zoom: 1,
+              center: data.results[0].geometry.location,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+          }
+
+          //initialize map if map is null
+          if (!map) map = new google.maps.Map(document.getElementById("map"), myOptions);
+          var marker = new google.maps.Marker({
+              position: latlng,
+              map: map
+          });
+
+          //extend the bounds to include each marker's position
+          bounds.extend(marker.position);
+
+          //now fit the map to the newly inclusive bounds
+          map.fitBounds(bounds);
+      }); //getJSON
+  } //for loop
+
 }
+
 
