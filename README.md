@@ -217,7 +217,7 @@ mongoimport -h ds012345.mongolab.com:56789 -d dbname -c collectionname -u dbuser
 
 
 Communication | Collaboration | Design | Development | APIs | Deployment
-------------|------|-------------------
+----| ---| --- | --- | --- | ---
  [Standup meetings](https://en.wikipedia.org/wiki/Stand-up_meeting)| [Trello](https://trello.com/)| [Moqups](moqups.com)| [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)| [Yelp](https://www.yelp.com/developers/documentation/v2/overview) | [Heroku](http://heroku.com/)
  [Slack](https://slack.com/) | | [LucidChart](http://lucidchart.com/) | [CSS](http://www.w3schools.com/css/) | [Google Maps](https://developers.google.com/maps/documentation/javascript/) | [MongoLab](https://mongolab.com/)
  [Markdown](https://guides.github.com/features/mastering-markdown/)|  | | [Bootstrap](http://getbootstrap.com/) | [Google OAuth](https://developers.google.com/identity/) |
@@ -228,6 +228,7 @@ Communication | Collaboration | Design | Development | APIs | Deployment
  |  | | [Mongoose](http://mongoosejs.com/) |
  |  | | [GitHub](https://github.com/) |
  |  | | [Sublime](http://www.sublimetext.com/) |
+
 
 
 ---
