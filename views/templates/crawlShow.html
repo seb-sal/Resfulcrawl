@@ -113,13 +113,20 @@
                   <div>
                     <h3 class="rsvp-headline">RSVPed: <%= crawl.members.length %></h3>
                   </div>
+
                   <div>
-                    <% if (crawl.members) { %>
-                      <% crawl.members.forEach(function (e) { %>
-                    <img class="crawl-member-thumbs" src="<%= e %>" height="100" width="86.5">
-                      <% }) %>
-                    <% } %>
+                    <% crawl.members.forEach(function(elem) { %>
+                      <% for (i = 0; i < users.length; i ++) { %>
+                        <% if (elem == users[i]._id) { %>
+                          <%= console.log('match!!') %>
+                          <img class="crawl-member-thumbs" src="<%= users[i].prof_picture %>" height="100" width="86.5">
+                        <% } %>
+                      <% } %>
+                    <% }); %>
                   </div>
+
+
+
                     <br>
                     <br>
                 </div>
