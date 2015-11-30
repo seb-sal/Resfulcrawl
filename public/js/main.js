@@ -4,6 +4,17 @@ var $mainContent;
 var map;
 var addresses=[];
 
+
+var editTime = function(crawlId) {
+  $.ajax({
+      type: 'PUT',
+      url: "/crawls/" + crawlId
+
+    }).success(function(data) {
+      console.log(data);
+    });
+}
+
 var showCrawl = function(crawlId) {
   // get the clicked crawl's id
   var $showbody = $('#showbody');
@@ -22,6 +33,11 @@ var showCrawl = function(crawlId) {
       $mainContent.fadeOut(1000, function() {
 
         $showbody.append($showHTML);
+
+        $('.clickEdit').on('click', function() {
+          console.log('click');
+          editTime(crawlId);
+        });
         $showbody.fadeIn(1000, function(){});
 
       });
@@ -51,6 +67,7 @@ $(document).ready(function () {
 
     crawls.forEach(function(crawl) {
       var crawlHTML = renderCrawl(crawl);
+
       $crawlDetail.append(crawlHTML);
     });
   });
