@@ -69,15 +69,7 @@ $(document).ready(function (){
       showCrawl(data._id);
     });
 
-    //go to show page for the new crawl
-
   })
 
 })
-
-
-// var showListTemplate = _.template($('#listTemplate').html());
-// console.log(showListTemplate);
-// var $listHTML = $(showListTemplate({list: locations}));
-// console.log($listHTML);
 
