@@ -114,11 +114,6 @@ $(document).ready(function () {
     });
   });
 
-  $('#reEditbutton').on('click', function(event) {
-    console.log('reEditbutton clicked');
-  })
-
-
 });  // document ready
 
 
