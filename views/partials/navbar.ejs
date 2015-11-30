@@ -6,19 +6,18 @@
             <img src="/images/misc/restfulcrawllogo.png" class="restfulcrawllogo Brand">
           </a>
       </div>
-      <li><a href="#"><i class="fa fa-search"></i>&nbsp&nbspFIND</a></li>
       <$ if (user) { $>
-        <li><a href="/venues"><i class="fa fa-plus-square"></i>&nbsp&nbspCREATE</a></li>
+        <li><a class="nav-create" href="/venues"><i class="fa fa-plus-square"></i>&nbsp&nbspCREATE</a></li>
       <$ } $>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <$ if (user) { $>
-      <li><a href="/logout"><i class="fa fa-sign-in"></i>&nbsp&nbspSIGN OUT</a></li>
+      <li><a class="nav-sign-in" href="/logout"><i class="fa fa-sign-in"></i>&nbsp&nbspSIGN OUT</a></li>
   <!-- Profile Pic Added -->
       <li data-id="<$= user._id $>" class="nav-bar-welcome nav navbar-nav navbar-right user-name">&nbsp&nbsp<$= user.prof_name $><h1></li>
       <img class="profile-pic" src="<$= user.prof_picture $>" alt="">
       <$ } else { $>
-      <li><a href="/auth/google"><i class="fa fa-sign-in"></i>&nbsp&nbspGOOGLE SIGN IN</a></li>
+      <li><a class="nav-sign-out" href="/auth/google"><i class="fa fa-sign-in"></i>&nbsp&nbspGOOGLE SIGN IN</a></li>
       <$ } $>
     </ul>
   </div>
