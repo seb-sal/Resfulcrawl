@@ -5,6 +5,6 @@ var deleteCrawl = function (deleteId) {
       method: "DELETE",
       url: "/crawls/" + deleteId
     }).success(function (data) {
-      window.location.href = "http://localhost:3000";
+      // window.location.href = "http://localhost:3000";
     });
 };

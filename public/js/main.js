@@ -4,12 +4,12 @@ var $mainContent;
 var map;
 var addresses=[];
 
-
-var editTime = function(crawlId) {
+// update individual crawl in the show page
+var editTimeUpdate = function(crawlId, edits) {
   $.ajax({
       type: 'PUT',
-      url: "/crawls/" + crawlId
-
+      url: "/crawls/" + crawlId,
+      data: edits
     }).success(function(data) {
       console.log(data);
     });
@@ -44,11 +44,30 @@ var showCrawl = function(crawlId) {
 
         $showbody.append($showHTML);
 
+        // click event for edit button on show page to append edit fields
+        $('#editCrawl').on('click', function() {
+          $('#edit-fields').append("<p>Title: <input id='reEditTitle' type='text' class='form-control' placeholder='Title' aria-describedby='basic-addon1'></p>");
+          $('#edit-fields').append("<p>Date: <input id='reEditDate' type='date' class='form-control' placeholder='Date' aria-describedby='basic-addon1'></p>");
+          $('#edit-fields').append("<p>Description: <input id='reEditDescription' type='textarea' class='form-control' placeholder='Description' aria-describedby='basic-addon1'></p>");
+          $('#edit-fields').append("<button id='reEditbutton' type='button'>Update</button>");
 
-        $('.clickEdit').on('click', function() {
-          console.log('click');
-          editTime(crawlId);
-        });
+          // click event for update button on show page to make ajax call to update crawl
+          $('#reEditbutton').on('click', function(event) {
+            event.preventDefault();
+            var title = $('#reEditTitle').val();
+            var date = $('#reEditDate').val();
+            var description = $('#reEditDescription').val();
+
+            var editTime = {
+              title: title,
+              description: description,
+              date_of_crawl: date
+            };
+            editTimeUpdate(crawlId, editTime);
+            location.reload(true);
+          });
+
+        }); //editCrawl
 
         $('.delete-button').on('click', function(event) {
           console.log(crawlId);
@@ -94,6 +113,10 @@ $(document).ready(function () {
 
     });
   });
+
+  $('#reEditbutton').on('click', function(event) {
+    console.log('reEditbutton clicked');
+  })
 
 
 });  // document ready
