@@ -23,9 +23,7 @@
         <% for (i=0; i < crawl.locations.length; i++) { %>
           <a href="<%= crawl.locations[i].url %>"><img class="crawl-show-thumb" src="<%= crawl.locations[i].image_url %>"></a>
         </div>
-        <div>
-          <button type="submit" class="clickEdit" id= "editCrawl" class="btn btn-info btn-xs edit-button">edit</button>
-        </div>
+
         <div class="crawl-show-restaurant-group">
           <p class="crawl-show-restaurant-info"> <%= (i+1) + ". " + crawl.locations[i].name %> </p>
           <p class="crawl-show-restaurant-info">Address: <%- crawl.locations[i].address %> </p>
