@@ -45,15 +45,28 @@ var destroy = function(req, res) {
 };
 
 
-var update = function(req, res) {
-console.log(req);
-  Crawl.findByIdAndUpdate(req.params.id, req.body, {new:true}, function(err, record){
+// var update = function(req, res) {
+// console.log(req);
+//   Crawl.findByIdAndUpdate(req.params.id, req.body, {new:true}, function(err, record){
+//     if(err) {
+//       res.send(err);
+//     };
+//     console.log(record);
+//     res.send(record);
+//   });
+// };
+
+var rsvpCrawl = function(req, res) {
+  console.log(req);
+  Crawl.findById(req.params.id, function(err, record){
     if(err) {
       res.send(err);
-    };
-    res.send(record);
+    }
+    record.members.push(req.user._id);
+    record.save;
+    res.send(record)
   });
-};
+}
 
 module.exports = {
   index: index,
@@ -61,5 +74,6 @@ module.exports = {
   search: search,
   create: create,
   destroy: destroy,
-  update: update
+  // update: update,
+  rsvpCrawl: rsvpCrawl
 };

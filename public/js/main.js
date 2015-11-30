@@ -15,6 +15,15 @@ var editTimeUpdate = function(crawlId, edits) {
     });
 }
 
+var addRsvp = function(crawlId, userId) {
+  $.ajax({
+    type: 'PUT',
+    url: "/crawls/" + crawlId,
+    data: { member: userId }
+  }).success(function(data){
+    console.log(data);
+  });
+}
 var $currentUser = $('.nav-bar-welcome').attr('data-id');
 console.log($currentUser);
 
@@ -35,14 +44,15 @@ var showCrawl = function(crawlId) {
         addresses.push(e.address);
       });
 
-      console.log(addresses);
-      console.log($showHTML);
-
 
       // swap out the page's content
       $mainContent.fadeOut(1000, function() {
 
         $showbody.append($showHTML);
+
+        $('#rsvp').on('click', function(){
+          addRsvp(crawlId, $currentUser);
+        });
 
         // click event for edit button on show page to append edit fields
         $('#editCrawl').on('click', function() {
