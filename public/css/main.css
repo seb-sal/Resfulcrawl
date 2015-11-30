@@ -16,7 +16,7 @@ body {
   position: relative;
   display: block;
   width: 100%;
-  height: 545px;
+  height: 490px;
   background: url('../../images/misc/joinMainImage.jpg');
   background-position: center center;
   background-repeat: no-repeat;
@@ -26,6 +26,32 @@ body {
   background-size: cover;
   margin: 0 auto;
   display: block;
+}
+
+body {
+  background: url('http://i.imgur.com/qGQ9EJw.jpg');
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0 auto;
+  padding-bottom: 230px;
+}
+
+.index-body {
+  background: url('http://i.imgur.com/Iw36B0u.jpg');
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom: 250px;
+  margin: 0 auto;
 }
 
 nav {
@@ -60,7 +86,7 @@ ol, ul {
   background: rgba(0,0,0,.6);
   height: 65px;
   position: relative;
-  top: 480px;
+  top: 425px;
 }
 
 .btn-primary {
@@ -88,10 +114,17 @@ ol, ul {
   border-color: rgba(255, 255, 255, .5);
 }
 
+.search-create-btn,
+.create-create-btn {
+  color: #ED6743;
+  background-color: lightgrey;
+  border-color: grey;
+}
+
 .search-create-btn:hover,
 .create-create-btn:hover {
   color: #fb7121;
-  background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, .05);
   border-color: grey;
 }
 
@@ -120,13 +153,20 @@ ol, ul {
 .navbar-nav > li > a:hover {
   color: #ED6743;
   height: 52.5px;
-  border-radius: 1.5px;
+  border-radius: 1.75px;
   background-color: rgba(255, 255, 255, .6);
+}
+
+.nav-create,
+.nav-sign-in,
+.nav-sign-out {
+  letter-spacing: .75px;
 }
 
 .user-name {
   margin-top: 16.5px;
   font-size: 14px;
+  letter-spacing: .625px;
 }
 
 .profile-pic {
@@ -141,16 +181,16 @@ ol, ul {
 
 .upcoming-crawls-headline {
   margin-left: 15px;
-  margin-top: 45px;
+  margin-top: 25px;
   font-weight: bold;
 }
 
 .crawl-instance img {
   width: 150px;
-  border-radius: 5px;
+  border-radius: 6.5px;
   box-shadow: 10px 10px 5px #888888;
   display: inline-block;
-  margin-top: 37.5px;
+  margin-top: 22.5px;
 }
 
 .crawl-instance:hover img {
@@ -159,7 +199,7 @@ ol, ul {
 
 .index-title {
   margin-top: 35px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   font-size: 15px;
   text-transform: uppercase;
 }
@@ -173,7 +213,14 @@ ol, ul {
   border-radius: 5px;
   width: 54.5%;
   box-shadow: 10px 10px 5px #888888;
-  background-color: rgba(0, 0, 0, .01);
+  background: url('http://i.imgur.com/Iw36B0u.jpg');
+  height: 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom: 230px;
 }
 
 #buttonAddVenue {
@@ -239,7 +286,7 @@ ol, ul {
 
 .venue-snippet-border {
   margin-top: -10px;
-  border-bottom: 1px solid lightgrey;x
+  border-bottom: 1px solid rgba(0, 0, 0, .375);
 }
 
 .venue-rating,
@@ -252,7 +299,7 @@ ol, ul {
 /*  background-color: red;*/
   margin-top: 75px;
   height: 100px;
-  width: 965px;
+  width: 1000px;
 }
 
 .show-upper-half-left {
@@ -268,23 +315,28 @@ ol, ul {
 .crawl-show-title {
   font-size: 50px;
   float: left;
-  margin-top: 25px;
-  margin-left: -5px;
+  margin-top: 20px;
+  margin-left: -35px;
   line-height: 50px;
   text-transform: uppercase;
   letter-spacing: -.5px;
 }
 
+.date-of-crawl {
+  margin-top: 30px;
+  margin-left: 290px;
+}
+
 .crawl-show-description {
   float: right;
-  margin-top: 40px;
-  margin-right: -25px;
-  font-size: 25px;
+  margin-top: 15px;
+  margin-right: -7.5px;
+  font-size: 21px;
 }
 
 .show-lower-half {
 /*  background-color: purple;*/
-  width: 965px;
+  width: 1000px;
   height: 625px;
 }
 
@@ -296,34 +348,37 @@ ol, ul {
 .show-lower-half-right {
 /*  background-color: yellow;*/
   height: 625px;
+  width: 565px;
 }
 
 .delete-button,
 .rsvp-button {
   width: 75px;
+  box-shadow: 2.25px 2.25px 1.25px #888888;
+
 }
 
 .rsvp-delete-group {
   margin-top: 25px;
-  margin-left: 65px;
+  margin-left: 460px;
 }
 
 .crawl-show-thumb {
-  margin-left: -5px;
-  margin-top: 62.5px;
+  margin-left: -30px;
+  margin-top: 57.5px;
   border-radius: 5px;
   box-shadow: 5px 5px 2.5px #888888;
   margin-bottom: 30px;
 }
 
 .crawl-show-restaurant-info {
-  color: rgba(0, 0, 0, .5);
-  margin-top: -7.5px;
-  margin-left: 120px;
+  color: rgba(0, 0, 0, .55);
+  margin-top: -11.5px;
+  margin-left: 105px;
 }
 
 .crawl-show-restaurant-group {
-  margin-top: -150px;
+  margin-top: -127.5px;
 }
 
 .crawl-show-thumb:hover {
@@ -331,19 +386,44 @@ ol, ul {
 }
 
 .edit-button {
-  margin-top: -14px;
-  margin-left: -5px;
-  margin-bottom: 5px;
+  margin-top: -7.5px;
+  margin-left: -30px;
+  margin-bottom: 17.5px;
+  height: 30px;
+  font-size: 14px;
+  width: 50px;
   box-shadow: 1.5px 1.5px 1px #888888;
 }
 
+#reEditTitle,
+#reEditDescription,
+#reEditDate,
+#reEditbutton {
+  margin-left: -30px;
+}
+
+#reEditbutton {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  height: 3opx;
+  font-size: 14px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .325);
+  color: white;
+}
+
+#reEditbutton:hover {
+  background-color: rgba(0, 0, 0, .425);
+  color: white;
+}
+
 #map {
-  width: 600px;
-  height: 480px;
+  width: 525px;
+  height: 445px;
   background-color: lightgrey;
   border-radius: 5px;
-  margin-top: 67.5px;
-  margin-left: 80px;
+  margin-top: 55px;
+  margin-left: 22.5px;
   box-shadow: 5px 5px 2.5px #888888;
 }
 
@@ -353,10 +433,19 @@ ol, ul {
   margin-bottom: 15px;
 }
 
-#crawl-members {
-  margin-left: 50px;
-  padding: 20px;
+.rsvp-headline {
+  margin-top: -25px;
+  margin-left: 5px;
 }
+
+.crawl-member-thumbs {
+  border-radius: 7.5px;
+  box-shadow: 1px 1px 1px #888888;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+
 
 
 
