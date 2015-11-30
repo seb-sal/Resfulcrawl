@@ -24,7 +24,7 @@
           <a href="<%= crawl.locations[i].url %>"><img class="crawl-show-thumb" src="<%= crawl.locations[i].image_url %>"></a>
         </div>
         <div>
-
+          <button type="submit" class="clickEdit" id= "editCrawl" class="btn btn-info btn-xs edit-button">edit</button>
         </div>
         <div class="crawl-show-restaurant-group">
           <p class="crawl-show-restaurant-info"> <%= (i+1) + ". " + crawl.locations[i].name %> </p>
@@ -108,9 +108,8 @@
               </div>
           </div>
       </div>
-
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMQPMJeW4oeP0r22mFVGvq-BnAaGqXvoU&signed_in=true&callback=initMap"></script>
+  </div>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMQPMJeW4oeP0r22mFVGvq-BnAaGqXvoU&signed_in=true&callback=initMap"></script>
+</script>
 
 <$ } $>
-
-

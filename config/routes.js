@@ -32,6 +32,7 @@ module.exports = function(app, passport) {
   // crawls resources
   router.get('/crawls',     crawlsController.index);
   router.get('/crawls/:id', crawlsController.show);
+  // router.put('/crawls/:id', crawlsController.update);
   router.post('/crawls', crawlsController.create);
   router.get('/crawls/search/:name', crawlsController.search);
   router.delete('/crawls/:id', crawlsController.destroy);

@@ -4,9 +4,19 @@ var $mainContent;
 var map;
 var addresses=[];
 
+
+var editTime = function(crawlId) {
+  $.ajax({
+      type: 'PUT',
+      url: "/crawls/" + crawlId
+
+    }).success(function(data) {
+      console.log(data);
+    });
+}
+
 var $currentUser = $('.nav-bar-welcome').attr('data-id');
 console.log($currentUser);
-
 
 
 var showCrawl = function(crawlId) {
@@ -33,6 +43,12 @@ var showCrawl = function(crawlId) {
       $mainContent.fadeOut(1000, function() {
 
         $showbody.append($showHTML);
+
+
+        $('.clickEdit').on('click', function() {
+          console.log('click');
+          editTime(crawlId);
+        });
 
         $('.delete-button').on('click', function(event) {
           console.log(crawlId);
@@ -73,7 +89,9 @@ $(document).ready(function () {
 
     crawls.forEach(function(crawl) {
       var crawlHTML = renderCrawl(crawl);
+      $crawlDetail.append(crawlHTML);
       $crawlDetail.prepend(crawlHTML);
+
     });
   });
 
@@ -119,6 +137,5 @@ function initMap() {
       }); //getJSON
   } //for loop
 
-} // initMap
 
-
+}
