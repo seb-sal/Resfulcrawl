@@ -53,7 +53,7 @@ Behind every successful project there are countless hours dedicated towards plan
 
 * Visit our [slides.com](http://goo.gl/kQ1zjY) to see the project presentation we created on-deck.
 * Visit our [moqups.com](https://app.moqups.com/pujoey@gmail.com/5jktYQOpyt/edit): to see the compelling wireframes we created.
-* Visit our [trello.com](https://goo.gl/xe65Ov) to see how we organized, planned and communicated our goals, our milestones and our issues.
+* Visit our [trello.com](https://trello.com/b/SMSwN4DV/five-guys) to see how we organized, planned and communicated our goals, our milestones and our issues.
 * Daily [stand up meetings](https://en.wikipedia.org/wiki/Stand-up_meeting) to communicate blockers, work-in-progress and up-coming tasks.
 
 ---
