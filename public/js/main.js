@@ -3,6 +3,7 @@ console.log('JS loaded!');
 var $mainContent;
 var map;
 var addresses=[];
+var $currentUser = $('.nav-bar-welcome').attr('data-id');
 
 // update individual crawl in the show page
 var editTimeUpdate = function(crawlId, edits) {
@@ -15,12 +16,6 @@ var editTimeUpdate = function(crawlId, edits) {
     });
 }
 
-
-
-var $currentUser = $('.nav-bar-welcome').attr('data-id');
-console.log($currentUser);
-
-
 var showCrawl = function(crawlId) {
   // get the clicked crawl's id
   var $showbody = $('#showbody');
@@ -28,61 +23,63 @@ var showCrawl = function(crawlId) {
   $.get("/crawls/" + crawlId)
     .success(function(crawl) {
 
+    $.get("/users")
+      .success(function(users) {
       // template the crawl show page
-      var showCrawlTemplate = _.template($('#showTemplate').html());
+        var showCrawlTemplate = _.template($('#showTemplate').html());
 
-      var $showHTML = $(showCrawlTemplate({crawl: crawl, current: $currentUser}));
+        var $showHTML = $(showCrawlTemplate({crawl: crawl, current: $currentUser, users: users}));
 
-      crawl.locations.forEach(function (e) {
-        addresses.push(e.address);
-      });
-
-
-      // swap out the page's content
-      $mainContent.fadeOut(1000, function() {
-
-        $showbody.append($showHTML);
-
-        $('#rsvp').on('click', function(){
-          addRsvp(crawlId, $currentUser);
+        crawl.locations.forEach(function (e) {
+          addresses.push(e.address);
         });
 
-        // click event for edit button on show page to append edit fields
-        $('#editCrawl').on('click', function() {
-          $('#edit-fields').append("<p>Title: <input id='reEditTitle' type='text' class='form-control' placeholder='Title' aria-describedby='basic-addon1'></p>");
-          $('#edit-fields').append("<p>Date: <input id='reEditDate' type='date' class='form-control' placeholder='Date' aria-describedby='basic-addon1'></p>");
-          $('#edit-fields').append("<p>Description: <input id='reEditDescription' type='textarea' class='form-control' placeholder='Description' aria-describedby='basic-addon1'></p>");
-          $('#edit-fields').append("<button id='reEditbutton' type='button'>Update</button>");
+      // swap out the page's content
+        $mainContent.fadeOut(1000, function() {
 
-          // click event for update button on show page to make ajax call to update crawl
-          $('#reEditbutton').on('click', function(event) {
-            event.preventDefault();
-            var title = $('#reEditTitle').val();
-            var date = $('#reEditDate').val();
-            var description = $('#reEditDescription').val();
+          $showbody.append($showHTML);
 
-            var editTime = {
-              title: title,
-              description: description,
-              date_of_crawl: date
-            };
-            editTimeUpdate(crawlId, editTime);
-            location.reload(true);
+          $('#rsvp').on('click', function(){
+            addRsvp(crawlId, $currentUser);
           });
 
-        }); //editCrawl
+          // click event for edit button on show page to append edit fields
+          $('#editCrawl').on('click', function() {
+            $('#edit-fields').append("<p>Title: <input id='reEditTitle' type='text' class='form-control' placeholder='Title' aria-describedby='basic-addon1'></p>");
+            $('#edit-fields').append("<p>Date: <input id='reEditDate' type='date' class='form-control' placeholder='Date' aria-describedby='basic-addon1'></p>");
+            $('#edit-fields').append("<p>Description: <input id='reEditDescription' type='textarea' class='form-control' placeholder='Description' aria-describedby='basic-addon1'></p>");
+            $('#edit-fields').append("<button id='reEditbutton' type='button'>Update</button>");
 
-        $('.delete-button').on('click', function(event) {
-          console.log(crawlId);
-          deleteCrawl(crawlId);
-          $mainContent.fadeIn(1000);
-          location.reload(true);
-        })
+            // click event for update button on show page to make ajax call to update crawl
+            $('#reEditbutton').on('click', function(event) {
+              event.preventDefault();
+              var title = $('#reEditTitle').val();
+              var date = $('#reEditDate').val();
+              var description = $('#reEditDescription').val();
 
-        $showbody.fadeIn(1000, function(){});
+              var editTime = {
+                title: title,
+                description: description,
+                date_of_crawl: date
+              };
+              editTimeUpdate(crawlId, editTime);
+              location.reload(true);
+            });
+
+          }); //editCrawl
+
+          $('.delete-button').on('click', function(event) {
+            console.log(crawlId);
+            deleteCrawl(crawlId);
+            $mainContent.fadeIn(1000);
+            location.reload(true);
+          })
+
+          $showbody.fadeIn(1000, function(){});
+
+        });
 
       });
-
   });
 
 };
