@@ -38,7 +38,7 @@ body {
   -o-background-size: cover;
   background-size: cover;
   margin: 0 auto;
-/*  padding-bottom: 230px;*/
+  padding-bottom: 230px;
 }
 
 .index-body {
@@ -214,12 +214,13 @@ ol, ul {
   width: 54.5%;
   box-shadow: 10px 10px 5px #888888;
 /*  background: url('http://i.imgur.com/vNaKQkb.jpg');*/
-/*  height: 100%;
-  background-repeat: no-repeat;
+/*  height: 100%;*/
+/*  background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;*/
+  background-size: cover;
+  padding: 230px;*/
 }
 
 #buttonAddVenue {
