@@ -64,8 +64,6 @@ $(document).ready(function (){
         locations: locations
       })
     }).success(function(data){
-
-      console.log(data._id);
       showCrawl(data._id);
     });
 

@@ -15,15 +15,8 @@ var editTimeUpdate = function(crawlId, edits) {
     });
 }
 
-var addRsvp = function(crawlId, userId) {
-  $.ajax({
-    type: 'PUT',
-    url: "/crawls/" + crawlId,
-    data: { member: userId }
-  }).success(function(data){
-    console.log(data);
-  });
-}
+
+
 var $currentUser = $('.nav-bar-welcome').attr('data-id');
 console.log($currentUser);
 

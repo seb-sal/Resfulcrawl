@@ -32,11 +32,11 @@ module.exports = function(app, passport) {
   // crawls resources
   router.get('/crawls',     crawlsController.index);
   router.get('/crawls/:id', crawlsController.show);
-  // router.put('/crawls/:id', crawlsController.update);
-  router.post('/crawls', crawlsController.create);
+  router.put('/crawls/:id', crawlsController.update);
   router.get('/crawls/search/:name', crawlsController.search);
   router.delete('/crawls/:id', crawlsController.destroy);
-  router.put('/crawls/:id',    crawlsController.rsvpCrawl);
+  router.post('/crawls/:id',    crawlsController.rsvpCrawl);
+  router.post('/crawls', crawlsController.create);
 
 
   // yelp api implmentation
