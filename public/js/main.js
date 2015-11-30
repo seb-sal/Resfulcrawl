@@ -95,7 +95,7 @@ function initMap() {
           var latlng = new google.maps.LatLng(p.lat, p.lng);
 
           var myOptions = {
-              zoom: 1,
+              zoom: 8,
               tilt: 45,
               center: data.results[0].geometry.location,
               mapTypeId: google.maps.MapTypeId.ROADMAP

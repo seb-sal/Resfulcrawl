@@ -103,7 +103,16 @@
                   <button id="rsvp" type="submit" class="btn btn-warning btn-md rsvp-button">RSVP</button>
                     <% } %>
                 </div>
-                <div>
+                <!-- RSVP members implmentation  -->
+                <div id= "crawl-members">
+                  <h3>RSVPed: <%= crawl.members.length %></h3>
+                  <% if (crawl.members) { %>
+                    <% crawl.members.forEach(function (e) { %>
+                      <img src="<%= e %>" height="100" width="90">
+                    <% }) %>
+                  <% } %>
+                  <br>
+                  <br>
                 </div>
               </div>
           </div>
