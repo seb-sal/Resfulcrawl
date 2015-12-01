@@ -36,7 +36,7 @@
 #### Group members:
 **Name** | **GitHub** | **Email**
 ---------| ---------- | ---------
-Adam **Allgood** | [GitHub](https://github.com/allgoodadam) | [allgoodadam@gmail.com](allgoodadam@gmail.com)
+Adam **Allgood** | [GitHub](https://github.com/allgooda) | [allgoodadam@gmail.com](allgoodadam@gmail.com)
 Jason **Ashara** | [GitHub](https://github.com/Ansel291) | [jasahara@yahoo.com](jasahara@yahoo.com)
 Joey **Lin** | [GitHub](https://github.com/pujoey) | [pujoey@gmail.com](pujoey@gmail.com)
 Ferdie **Quizon** | [GitHub](https://github.com/FerdieQ) | [fquizon@gmail.com](fquizon@gmail.com)
@@ -285,10 +285,12 @@ Parameters|Value|Description
 `googleId`|String|*captured by Google OAuth API*.
 
 
+
+
 ####Crawl Model
 
 Key | Value | Description
---- | --- | 
+--- | --- | --- |
 `id` | String| returns the crawl token id. | 
 `title` | String |  returns the crawl name. eg. Joey's Crawl.
 `date_of_crawl` | Date |  returns the date & time the crawl was created. 
@@ -297,10 +299,12 @@ Key | Value | Description
 `locations`| Array of location objects |  returns all locations of the crawl.
 
 
+
 ####Locations Model
 
+
 Key | Value | Description
---- | --- | 
+--- | --- | --- |
 `start` | String| returns start time of the crawl. | 
 `name` | String| returns the name of the crawl | 
 `url` | String| *captured by Yelp API*. | 
@@ -308,10 +312,14 @@ Key | Value | Description
 `phone` | String| *captured by Yelp API*.  | 
 `image_url` | String| *captured by Yelp API*.  | 
 
+
+
 ####Venues Model
 
+
+
 Key | Value | Description
---- | --- | 
+--- | --- | --- |
 `name` | String| *captured by Yelp API*. | 
 
 
