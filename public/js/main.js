@@ -17,6 +17,7 @@ var editTimeUpdate = function(crawlId, edits) {
 }
 
 var showCrawl = function(crawlId) {
+
   // get the clicked crawl's id
   var $showbody = $('#showbody');
 
@@ -119,7 +120,9 @@ $(document).ready(function () {
 
 // function makes ajax call to acquire lat, lng by addresses, then place markers for all addresses, then extend map bound to include all markers
 function initMap() {
-  //Marker labeling implmentation
+  if (map) { return; }
+    //Marker labeling implmentation
+  }
   var labels = '123456789';
   var labelIndex = 0;
 
