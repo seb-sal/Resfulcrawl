@@ -54,7 +54,7 @@
 
 
 <script type="text/template" id="showTemplate">
-<%=console.log(users[2]) %>
+<% var count = 0; %>
   <%= console.log(current) %>
 
       <div class="container show-upper-half">
@@ -104,9 +104,19 @@
               <div class="rsvp-delete-group">
                 <% if(current == crawl.creator) { %>
                   <button type="submit" class="btn btn-danger btn-md delete-button">Delete</button>
-                <% } else { %>
-                  <button id="rsvp" type="submit" class="btn btn-warning btn-md rsvp-button">RSVP</button>
+                <% } else  { %>
+                  <% crawl.members.forEach(function(elem) { %>
+                      <% if (elem == current) { %>
+                        <% count ++; %>
+                      <% } %>
+                  <% }); %>
                 <% } %>
+
+                <% if (count == 0) { %>
+                  <button id="rsvp" type="submit" class="btn btn-warning btn-md rsvp-button">RSVP</button>
+                  <% count = 0; %>
+                <% } %>
+
               </div>
               <!-- RSVP members implmentation  -->
                 <div id= "crawl-members">
