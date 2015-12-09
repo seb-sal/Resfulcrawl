@@ -17,6 +17,5 @@ var addRsvp = function(crawlId, userId) {
   }).success(function(data){
     console.log(data);
   });
-  initMap();
   showCrawl(crawlId);
 }
