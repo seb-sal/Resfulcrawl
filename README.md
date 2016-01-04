@@ -124,13 +124,19 @@ Below is a list of the current actions (also known as user stories, behaviors or
 
 Below is a list of the nice-to-have features (created as user stories) that we will have for our second version:
 
-1. As a user, I should be able to delete people from my food crawl.
 - As a user, I should be able to join a crawl that is in-progress.
 - As a user, when a food crawl is over, the crawl should become inactive.
 - As a user, I should be able to delete people from my food crawl.
 - As a user, I should be able to join food crawls that are in-progress.
 - A food crawl should become inactive (automatically) when completed.
+- As a user, I should see the dates on the main page for the crawls.
+- As a user, I should be able to RSVP for a crawl.
+- As a user I should be able to see the closest food crawls based on my location (SPA implementation of search page)
 - A user that joins a crawl should be able to see the complete crawl information.
+- As a user, I should be able to see prepopulated fields when I add a restaurant to a crawl
+- As a user, I should be see a prompt asking me if I am sure I want to delete a crawl
+- As a user, I should be able to do a search for crawls near a location I specified
+- As a user, the geolocation for a crawl should be the avg of lat and lng of all the restaurants
 
 
 ### Project scope
