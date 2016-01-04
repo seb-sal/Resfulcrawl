@@ -132,7 +132,7 @@ Below is a list of the nice-to-have features (created as user stories) that we w
 - As a user, I should see the dates on the main page for the crawls.
 - As a user, I should be able to RSVP for a crawl.
 - As a user I should be able to see the closest food crawls based on my location (SPA implementation of search page)
-- A user that joins a crawl should be able to see the complete crawl information.
+- As user that joins a crawl should be able to see the complete crawl information.
 - As a user, I should be able to see prepopulated fields when I add a restaurant to a crawl
 - As a user, I should be see a prompt asking me if I am sure I want to delete a crawl
 - As a user, I should be able to do a search for crawls near a location I specified
