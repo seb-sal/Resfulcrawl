@@ -37,9 +37,7 @@ var search = function(req, res, next) {
 
 var destroy = function(req, res) {
   Crawl.findByIdAndRemove(req.params.id, function(err, record){
-    if(err){
-      res.send(err);
-    };
+    if (err) res.send(err);
     res.send(record.title + " has been deleted!");
   });
 };
