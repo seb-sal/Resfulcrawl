@@ -4,6 +4,7 @@ var $mainContent;
 var map;
 var addresses=[];
 var $currentUser = $('.nav-bar-welcome').attr('data-id');
+var rsvp = true;
 
 // update individual crawl in the show page
 var editTimeUpdate = function(crawlId, edits) {
@@ -32,7 +33,7 @@ var showCrawl = function(crawlId) {
         var $showHTML = $(showCrawlTemplate({crawl: crawl, current: $currentUser, users: users}));
 
         crawl.locations.forEach(function (e) {
-          addresses.push(e.address);
+          if (rsvp) addresses.push(e.address);
         });
 
       // swap out the page's content
@@ -41,6 +42,7 @@ var showCrawl = function(crawlId) {
           $showbody.html($showHTML);
 
           $('#rsvp').on('click', function(){
+            rsvp = false;
             addRsvp(crawlId, $currentUser);
           });
 
@@ -127,7 +129,9 @@ function initMap() {
 
   var bounds = new google.maps.LatLngBounds();
   //ajax call to google api for geocoding
+
   for (var x = 0; x < addresses.length; x++) {
+    console.log(addresses);
     $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
       var p = data.results[0].geometry.location;
       var latlng = new google.maps.LatLng(p.lat, p.lng);
