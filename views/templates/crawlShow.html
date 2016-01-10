@@ -111,7 +111,7 @@
                   <% }); %>
                 <% } %>
 
-                <% if (count == 0) { %>
+                <% if (count == 0 && current !== crawl.creator) { %>
                   <button id="rsvp" type="submit" class="btn btn-warning btn-md rsvp-button">RSVP</button>
                   <% count = 0; %>
                 <% } %>
