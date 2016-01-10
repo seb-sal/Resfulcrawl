@@ -43,8 +43,8 @@ var index = function(req, res, next) {
   /* We combine all the parameters in order of importance */
   var parameters = _.assign(default_parameters, required_parameters);
 
-  /* Then we call Yelp's Oauth 1.0a server, and it returns a signature */
-  /* Note: This signature is only good for 300 seconds after the oauth_timestamp */
+  // Then we call Yelp's Oauth 1.0a server, and it returns a signature
+  // Note: This signature is only good for 300 seconds after the oauth_timestamp
   var signature = oauthSignature.generate(httpMethod, url, parameters, consumerSecret, tokenSecret, { encodeSignature: false});
 
   console.log(signature);
@@ -55,7 +55,6 @@ var index = function(req, res, next) {
   var paramURL = qs.stringify(parameters);
 
 
-  /* Add the query string to the url */
   var apiURL = url + paramURL;
 
 

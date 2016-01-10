@@ -131,7 +131,6 @@ function initMap() {
   //ajax call to google api for geocoding
 
   for (var x = 0; x < addresses.length; x++) {
-    console.log(addresses);
     $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
       var p = data.results[0].geometry.location;
       var latlng = new google.maps.LatLng(p.lat, p.lng);

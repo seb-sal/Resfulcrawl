@@ -29,7 +29,7 @@ body {
 }
 
 body {
-  background: url('http://i.imgur.com/qGQ9EJw.jpg');
+  background: url('http://i.imgur.com/vNaKQkb.jpg');
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
@@ -42,7 +42,7 @@ body {
 }
 
 .index-body {
-  background: url('http://i.imgur.com/Iw36B0u.jpg');
+  background: url('http://i.imgur.com/vNaKQkb.jpg');
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
@@ -213,14 +213,14 @@ ol, ul {
   border-radius: 5px;
   width: 54.5%;
   box-shadow: 10px 10px 5px #888888;
-  background: url('http://i.imgur.com/Iw36B0u.jpg');
-  height: 100%;
-  background-repeat: no-repeat;
+/*  background: url('http://i.imgur.com/vNaKQkb.jpg');*/
+/*  height: 100%;*/
+/*  background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding-bottom: 230px;
+  padding: 230px;*/
 }
 
 #buttonAddVenue {
