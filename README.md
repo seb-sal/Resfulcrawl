@@ -130,7 +130,6 @@ Below is a list of the nice-to-have features (created as user stories) that we w
 - As a user, I should be able to join food crawls that are in-progress.
 - A food crawl should become inactive (automatically) when completed.
 - As a user, I should see the dates on the main page for the crawls.
-- As a user, I should be able to RSVP for a crawl.
 - As a user I should be able to see the closest food crawls based on my location (SPA implementation of search page)
 - As user that joins a crawl should be able to see the complete crawl information.
 - As a user, I should be able to see prepopulated fields when I add a restaurant to a crawl
